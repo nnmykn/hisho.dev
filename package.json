@@ -16,7 +16,8 @@
     "format:eslint": "yarn lint:next --fix",
     "format:prettier": "yarn lint:prettier --write",
     "test": "run-s test:*",
-    "test:component": "jest"
+    "test:component": "jest",
+    "test:e2e": "playwright test {src,app} -c playwright.config.e2e.ts"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -25,6 +26,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.29.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -32,6 +34,7 @@
     "@types/node": "18.11.17",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
+    "dotenv": "^16.0.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
     "eslint-plugin-testing-library": "^5.9.1",
