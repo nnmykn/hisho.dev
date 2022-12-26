@@ -4,7 +4,7 @@ module.exports = {
   overrides: [
     // Only uses Testing Library lint rules in test files
     {
-      files: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
+      files: ['**/?(*.)+(component.spec).tsx'],
       extends: ['plugin:testing-library/react'],
     },
   ],

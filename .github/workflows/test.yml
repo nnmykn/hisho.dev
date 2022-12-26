@@ -20,5 +20,7 @@ jobs:
           cache-dependency-path: ./yarn.lock
       - name: Install dependencies
         run: yarn install
-      - name: Run lint
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run test
         run: yarn test
