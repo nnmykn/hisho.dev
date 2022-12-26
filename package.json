@@ -17,7 +17,7 @@
     "format:prettier": "yarn lint:prettier --write",
     "test": "run-s test:*",
     "test:component": "jest",
-    "test:e2e": "playwright test {src,app} -c playwright.config.e2e.ts"
+    "test:e2e": "playwright test -c playwright.config.e2e.ts"
   },
   "dependencies": {
     "@next/font": "13.1.1",
