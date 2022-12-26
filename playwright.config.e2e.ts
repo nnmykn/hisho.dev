@@ -23,7 +23,6 @@ const config: PlaywrightTestConfig = {
   },
   webServer: {
     command: 'yarn dev',
-    port: 3000,
     reuseExistingServer: true,
     url: NEXT_PUBLIC_FRONTEND_URL,
   },
