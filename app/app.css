@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapper {
+  --gap: 20px;
+
+  width: 100%;
+  max-width: calc(theme("maxWidth.5xl") + var(--gap) * 2);
+  padding-inline: var(--gap);
+  margin-inline: auto;
+}
