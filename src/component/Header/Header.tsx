@@ -1,3 +1,7 @@
 export const Header = () => {
-  return <header>Header</header>
+  return (
+    <header className={'bg-accent text-primary'}>
+      <div className={'wrapper'}>Header</div>
+    </header>
+  )
 }
