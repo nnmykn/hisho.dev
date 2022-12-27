@@ -1,3 +1,4 @@
+import '@app/app.css'
 import type { ReactNode } from 'react'
 
 type Props = {
@@ -8,7 +9,7 @@ const RootLayout = ({ children }: Props) => {
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body className={'bg-primary text-write font-body'}>{children}</body>
     </html>
   )
 }
