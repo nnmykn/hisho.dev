@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:where(a) {
+  display: block;
+}
+
 .wrapper {
   --gap: 20px;
 
