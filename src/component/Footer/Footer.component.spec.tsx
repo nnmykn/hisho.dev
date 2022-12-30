@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 describe('Footerコンポーネントのテスト', () => {
   render(<Footer />)
   test('Footerの文字が含まれているDOMが存在するか確認', () => {
-    const header = screen.getByText('Footer')
-    expect(header).toBeInTheDocument()
+    const footer = screen.getByText('Footer')
+    expect(footer).toBeInTheDocument()
   })
 })
