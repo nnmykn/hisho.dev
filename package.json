@@ -22,6 +22,7 @@
     "test:e2e": "playwright test -c playwright.config.e2e.ts"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
     "@next/font": "13.1.4",
     "@react-spring/three": "^9.6.1",
     "@react-three/drei": "^9.56.1",
@@ -29,7 +30,9 @@
     "next": "13.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "three": "^0.148.0"
+    "react-hook-form": "^7.42.1",
+    "three": "^0.148.0",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.29.2",
