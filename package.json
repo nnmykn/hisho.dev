@@ -23,9 +23,13 @@
   },
   "dependencies": {
     "@next/font": "13.1.4",
+    "@react-spring/three": "^9.6.1",
+    "@react-three/drei": "^9.56.1",
+    "@react-three/fiber": "^8.10.1",
     "next": "13.1.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.148.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.29.2",
@@ -37,6 +41,7 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@types/three": "^0.148.1",
     "autoprefixer": "^10.4.13",
     "dotenv": "^16.0.3",
     "eslint": "8.32.0",
