@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div
       className={
-        'grid grid-rows-[auto_auto_1fr_auto] min-h-[100svh] @container'
+        'grid grid-rows-[auto_auto_1fr_auto] grid-cols-[100%] min-h-[100svh] @container'
       }
     >
       <Header />
