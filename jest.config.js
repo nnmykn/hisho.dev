@@ -19,6 +19,8 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@src/(.*)$': '<rootDir>/src/$1',
     '^@app/(.*)$': '<rootDir>/app/$1',
+    '^@backend/(.*)$': '<rootDir>/backend/$1',
+    '^@shared/(.*)$': '<rootDir>/shared/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
 }
