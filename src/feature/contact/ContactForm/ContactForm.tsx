@@ -1,43 +1,39 @@
 'use client'
 
 import { useForm } from '@src/lib/form/useForm/useForm'
-import { ComponentProps, forwardRef } from 'react'
 import { z } from 'zod'
 import { Spacer } from '@src/component/Spacer/Spacer'
+import wretch from 'wretch'
+import { Input } from '@src/component/Form/Input/Input'
+import { Textarea } from '@src/component/Form/Textarea/Textarea'
+import { createContactInput } from '@src/pages/api/contact/createContact.input'
 
-const Input = forwardRef<
-  HTMLInputElement,
-  Omit<ComponentProps<'input'>, 'className'>
->(({ value, type, ...props }, ref) => {
-  return (
-    <input
-      ref={ref}
-      type={'type'}
-      value={value}
-      className={'text-primary block w-full'}
-      {...props}
-    />
-  )
-})
+const responseSchema = z.literal('success')
 
-const schema = z.object({
-  name: z.string(),
-  email: z.string(),
-  message: z.string(),
-})
+const api = wretch('/api/contact')
+  .errorType('json')
+  .resolve(async (r) => responseSchema.parse(await r.json()))
 
 export const ContactForm = () => {
-  const { handleSubmit, register } = useForm({
-    schema,
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
+    schema: createContactInput,
   })
 
   const handleFormSubmit = async ({
     name,
     email,
     message,
-  }: z.output<typeof schema>) => {
+  }: z.output<typeof createContactInput>) => {
     try {
-      alert(JSON.stringify({ name, email, message }, null, 2))
+      await api.post({
+        name,
+        email,
+        message,
+      })
     } catch (e) {
       console.log(e)
     }
@@ -52,16 +48,25 @@ export const ContactForm = () => {
       <div>
         <label htmlFor={'name'}>名前</label>
         <Input {...register('name')} />
+        {errors.name && (
+          <p className={'text-red text-sm mt-1'}>{errors.name.message}</p>
+        )}
       </div>
       <Spacer size={3} />
       <div>
         <label htmlFor={'email'}>メールアドレス</label>
         <Input {...register('email')} />
+        {errors.email && (
+          <p className={'text-red text-sm mt-1'}>{errors.email.message}</p>
+        )}
       </div>
       <Spacer size={3} />
       <div className={'flex flex-col'}>
         <label htmlFor={'message'}>メッセージ</label>
-        <textarea {...register('message')} />
+        <Textarea {...register('message')} />
+        {errors.message && (
+          <p className={'text-red text-sm mt-1'}>{errors.message.message}</p>
+        )}
       </div>
       <Spacer size={10} />
       <button type={'submit'}>送信</button>
