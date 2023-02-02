@@ -14,7 +14,7 @@ const api = wretch('/api/contact')
   .errorType('json')
   .resolve(async (r) => responseSchema.parse(await r.json()))
 
-export const ContactForm = () => {
+export const CreateContactForm = () => {
   const {
     handleSubmit,
     register,
@@ -41,7 +41,7 @@ export const ContactForm = () => {
 
   return (
     <form
-      id={'ContactForm'}
+      id={'CreateContactForm'}
       className={'flex flex-col'}
       onSubmit={handleSubmit(handleFormSubmit)}
     >

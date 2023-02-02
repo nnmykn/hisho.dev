@@ -1,10 +1,10 @@
-import { ContactForm } from '@src/feature/contact/ContactForm/ContactForm'
+import { CreateContactForm } from '@src/feature/contact/CreateContactForm/CreateContactForm'
 
 const Page = () => {
   return (
     <div>
       <div>page</div>
-      <ContactForm />
+      <CreateContactForm />
     </div>
   )
 }
