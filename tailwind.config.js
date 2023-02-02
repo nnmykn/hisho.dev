@@ -17,6 +17,7 @@ module.exports = {
       secondary: '#393E46',
       accent: '#4ECCA3',
       write: '#EEEEEE',
+      red: '#dc2626',
     },
     fontFamily: {
       body: ['system-ui'],
