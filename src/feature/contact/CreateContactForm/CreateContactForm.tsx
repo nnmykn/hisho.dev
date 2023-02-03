@@ -1,20 +1,18 @@
 'use client'
 
 import { useForm } from '@src/lib/form/useForm/useForm'
-import { z } from 'zod'
 import { Spacer } from '@src/component/Spacer/Spacer'
-import wretch from 'wretch'
 import { Input } from '@src/component/Form/Input/Input'
 import { Textarea } from '@src/component/Form/Textarea/Textarea'
-import { createContactInput } from '@src/pages/api/contact/createContact.input'
-
-const responseSchema = z.literal('success')
-
-const api = wretch('/api/contact')
-  .errorType('json')
-  .resolve(async (r) => responseSchema.parse(await r.json()))
+import {
+  CreateContactInput,
+  createContactInput,
+} from '@shared/contact/createContact.input'
+import { trpc } from '@src/lib/trpc/trpc'
 
 export const CreateContactForm = () => {
+  const createContact = trpc.contact.create.useMutation()
+
   const {
     handleSubmit,
     register,
@@ -27,9 +25,9 @@ export const CreateContactForm = () => {
     name,
     email,
     message,
-  }: z.output<typeof createContactInput>) => {
+  }: CreateContactInput) => {
     try {
-      await api.post({
+      await createContact.mutateAsync({
         name,
         email,
         message,
