@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export const config = {
-  matcher: ['/((?!api|_next/static|favicon.ico).*)'],
-}
-
 /**
  * @see https://github.com/vercel/examples/blob/main/edge-middleware/basic-auth-password/middleware.ts
  */
@@ -13,11 +9,11 @@ export function middleware(req: NextRequest) {
 
   if (basicAuth) {
     const authValue = basicAuth.split(' ')[1]
-    const [user, pwd] = atob(authValue ?? '').split(':')
+    const [user, password] = atob(authValue ?? '').split(':')
 
     if (
       user === process.env['BASIC_AUTH_USERNAME'] &&
-      pwd === process.env['BASIC_AUTH_PASSWORD']
+      password === process.env['BASIC_AUTH_PASSWORD']
     ) {
       return NextResponse.next()
     }
