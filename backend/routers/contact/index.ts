@@ -6,14 +6,4 @@ export const contactRouter = router({
   create: publicProcedure.input(createContactInput).mutation(({ input }) => {
     return ContactService.create(input)
   }),
-  get: publicProcedure.query(() => {
-    return [
-      {
-        name: 'hisho',
-      },
-      {
-        name: 'hisho2',
-      },
-    ]
-  }),
 })
