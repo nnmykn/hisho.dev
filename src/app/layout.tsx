@@ -1,4 +1,4 @@
-import '@app/app.css'
+import '@src/app/app.css'
 import { ClientProvider } from '@src/lib/trpc/ClientProvider/ClientProvider'
 import type { ReactNode } from 'react'
 

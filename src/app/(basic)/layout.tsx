@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Header } from '@src/component/Header/Header'
 import { Footer } from '@src/component/Footer/Footer'
-import { Hero } from '@app/(basic)/Hero'
+import { Hero } from '@src/app/(basic)/Hero'
 
 type Props = {
   children: ReactNode

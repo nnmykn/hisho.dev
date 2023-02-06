@@ -10,15 +10,11 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
-  testMatch: [
-    '<rootDir>/app/**/*.component.spec.tsx',
-    '<rootDir>/src/**/*.component.spec.tsx',
-  ],
+  testMatch: ['<rootDir>/src/**/*.component.spec.tsx'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   // Handle module aliases (this will be automatically configured for you soon)
   moduleNameMapper: {
     '^@src/(.*)$': '<rootDir>/src/$1',
-    '^@app/(.*)$': '<rootDir>/app/$1',
     '^@backend/(.*)$': '<rootDir>/backend/$1',
     '^@shared/(.*)$': '<rootDir>/shared/$1',
   },
