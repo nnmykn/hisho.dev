@@ -16,11 +16,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ./.node-version
-          cache: yarn
-          cache-dependency-path: ./yarn.lock
+          cache: pnpm
+          cache-dependency-path: ./pnpm-lock.yaml
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run test
-        run: yarn test
+        run: pnpm test
