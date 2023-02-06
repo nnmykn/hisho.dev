@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
     headless: true,
   },
   webServer: {
-    command: 'yarn dev',
+    command: 'pnpm dev',
     reuseExistingServer: true,
     url: NEXT_PUBLIC_FRONTEND_URL,
   },
