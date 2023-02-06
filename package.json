@@ -27,6 +27,7 @@
     "@react-spring/three": "^9.6.1",
     "@react-three/drei": "^9.56.17",
     "@react-three/fiber": "^8.10.4",
+    "@sendgrid/mail": "^7.7.0",
     "@slack/web-api": "^6.8.1",
     "@tanstack/query-core": "^4.24.4",
     "@tanstack/react-query": "^4.24.4",
