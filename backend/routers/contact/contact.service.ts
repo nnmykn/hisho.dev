@@ -7,9 +7,13 @@ import {
   SLACK_USERNAME,
 } from '@backend/constant'
 import { createMultiLineString } from '@shared/util/createMultiLineString/createMultiLineString'
+import type { Context } from '@backend/context'
 
 export class ContactService {
-  public static readonly create = async (input: CreateContactInput) => {
+  public static readonly create = async (
+    input: CreateContactInput,
+    ctx: Context
+  ) => {
     try {
       await Promise.all([
         postChatMessage({
@@ -18,7 +22,10 @@ export class ContactService {
             `<@${SLACK_USERNAME}>`,
             `name: ${input.name}`,
             `email: ${input.email}`,
-            `message: ${input.message}`
+            `message: ${input.message}`,
+            '',
+            '',
+            `このチャットは: "${ctx.req.headers.origin}"から送信されました。`
           ),
         }),
         sendMail({
@@ -29,7 +36,10 @@ export class ContactService {
             'お問い合わせありがとうございます',
             '',
             '',
-            '後ほどご連絡いたします'
+            '後ほどご連絡いたします',
+            '',
+            '',
+            `このメールは"${ctx.req.headers.origin}"から送信されました。`
           ),
         }),
       ])
