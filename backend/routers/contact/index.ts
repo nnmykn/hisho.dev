@@ -3,6 +3,7 @@ import { createContactInput } from '@shared/contact/createContact.input'
 import { postContactChatMessage } from '@backend/lib/slack/postChatMessage'
 import { sendMail } from '@backend/lib/sendGrid/sendMail'
 import { FROM_EMAIL } from '@backend/constant'
+import { createMultiLineString } from '@shared/util/createMultiLineString/createMultiLineString'
 
 export const contactRouter = router({
   create: publicProcedure
@@ -15,8 +16,12 @@ export const contactRouter = router({
             toEmail: input.email,
             fromEmail: FROM_EMAIL,
             subject: 'お問い合わせありがとうございます',
-            message:
-              'お問い合わせありがとうございます\n\n後ほどご連絡いたします',
+            message: createMultiLineString(
+              'お問い合わせありがとうございます',
+              '',
+              '',
+              '後ほどご連絡いたします'
+            ),
           }),
         ])
 
