@@ -13,7 +13,7 @@ export default defineConfig({
     setupFiles: path.resolve(process.cwd(), './vitest.setup.ts'),
     exclude: [
       ...configDefaults.exclude,
-      path.resolve(process.cwd(), './src/app/**/page.e2e.spec.ts'),
+      path.resolve(process.cwd(), './src/**/*.e2e.spec.ts'),
     ],
   },
 })
