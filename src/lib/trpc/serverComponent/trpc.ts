@@ -6,6 +6,7 @@ import superjson from 'superjson'
 export const rsc = createTRPCNextLayout({
   router: appRouter,
   transformer: superjson,
+  // @ts-ignore
   createContext() {
     return createContext
   },
