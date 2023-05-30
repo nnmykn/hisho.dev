@@ -8,17 +8,6 @@ const nextConfig = () => {
       appDir: true,
     },
     pageExtensions: ['api.ts', 'tsx'],
-    async redirects() {
-      return __PROD__
-        ? [
-            {
-              source: '/:path((?!404$).*)',
-              destination: '/404',
-              permanent: true,
-            },
-          ]
-        : []
-    },
   }
 }
 
