@@ -11,7 +11,6 @@ specifiers:
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^14.0.0
   '@testing-library/user-event': ^14.4.3
-  '@tsconfig/node18': ^2.0.1
   '@tsconfig/strictest': ^2.0.1
   '@types/node': 20.2.5
   '@types/react': 18.2.7
@@ -63,7 +62,6 @@ devDependencies:
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 14.4.3
-  '@tsconfig/node18': 2.0.1
   '@tsconfig/strictest': 2.0.1
   '@types/node': 20.2.5
   '@types/react': 18.2.7
@@ -1129,10 +1127,6 @@ packages:
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
-    dev: true
-
-  /@tsconfig/node18/2.0.1:
-    resolution: {integrity: sha512-UqdfvuJK0SArA2CxhKWwwAWfnVSXiYe63bVpMutc27vpngCntGUZQETO24pEJ46zU6XM+7SpqYoMgcO3bM11Ew==}
     dev: true
 
   /@tsconfig/strictest/2.0.1:
