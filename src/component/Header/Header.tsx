@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Logo } from '@src/icon/Logo/Logo'
+import { Logo } from '@/src/icon/Logo/Logo'
 
 export const Header = () => {
   return (

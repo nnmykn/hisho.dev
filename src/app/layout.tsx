@@ -1,4 +1,4 @@
-import '@src/app/app.css'
+import '@/src/app/app.css'
 import type { ReactNode } from 'react'
 
 type Props = {

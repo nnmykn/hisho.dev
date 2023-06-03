@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { createMultiLineString } from '@shared/util/createMultiLineString/createMultiLineString'
+import { createMultiLineString } from '@/shared/util/createMultiLineString/createMultiLineString'
 
 describe('createMultiLineStringのテスト', () => {
   test('ただしく改行されるかどうか', () => {

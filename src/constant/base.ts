@@ -1,5 +1,5 @@
-import { PORT, VERCEL_URL } from '@src/constant/env'
-import { isBrowser } from '@src/util/isBrowser/isBrowser'
+import { PORT, VERCEL_URL } from '@/src/constant/env'
+import { isBrowser } from '@/src/util/isBrowser/isBrowser'
 
 export const FRONTEND_URL = isBrowser()
   ? ''
