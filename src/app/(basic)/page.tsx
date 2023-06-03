@@ -1,7 +1,9 @@
+import { CreateContactForm } from '@/src/app/(basic)/_component/CreateContactForm'
+
 const Page = () => {
   return (
     <div>
-      <div>page</div>
+      <CreateContactForm />
     </div>
   )
 }
