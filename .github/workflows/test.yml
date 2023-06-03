@@ -19,7 +19,7 @@ jobs:
         with:
           node-version-file: ./.node-version
           cache: npm
-          cache-dependency-path: ./package-lock.yaml
+          cache-dependency-path: ./package-lock.json
       - name: Install dependencies
         run: npm install --force
       - name: Install Playwright Browsers
