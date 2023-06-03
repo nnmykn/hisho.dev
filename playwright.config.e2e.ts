@@ -19,7 +19,7 @@ const config: PlaywrightTestConfig = {
     headless: true,
   },
   webServer: {
-    command: 'npm run dev',
+    command: 'pnpm dev',
     reuseExistingServer: true,
     url: NEXT_PUBLIC_FRONTEND_URL,
   },
