@@ -1,6 +1,6 @@
 import { postChatMessage } from '@/src/lib/slack/postChatMessage'
 import { env } from '@/src/constant/env'
-import { createMultiLineString } from '@/src/util/createMultiLineString/createMultiLineString'
+import { joinWithNewLines } from '@/src/util/joinWithNewLines/joinWithNewLines'
 import { sendMail } from '@/src/lib/sendGrid/sendMail'
 import { CreateContactResult } from '@/src/app/(basic)/_action/createContact'
 import { CreateContactInput } from '@/src/app/(basic)/_action/craeteContact.entity'
@@ -14,7 +14,7 @@ export class CreateContactService {
       await Promise.all([
         postChatMessage({
           channelId: env.SLACK_CONTACT_CHANNEL_CONVERSATION_ID,
-          message: createMultiLineString(
+          message: joinWithNewLines(
             `<@${env.SLACK_USERNAME}>`,
             `name: ${input.name}`,
             `email: ${input.email}`,
@@ -28,7 +28,7 @@ export class CreateContactService {
           toEmail: input.email,
           fromEmail: env.FROM_EMAIL,
           subject: 'お問い合わせありがとうございます',
-          message: createMultiLineString(
+          message: joinWithNewLines(
             'お問い合わせありがとうございます',
             '',
             '',
