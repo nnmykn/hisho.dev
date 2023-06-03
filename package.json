@@ -27,6 +27,8 @@
     "@react-spring/three": "^9.7.2",
     "@react-three/drei": "^9.71.0",
     "@react-three/fiber": "^8.13.0",
+    "@sendgrid/mail": "^7.7.0",
+    "@slack/web-api": "^6.8.1",
     "@t3-oss/env-nextjs": "^0.4.0",
     "next": "13.4.4",
     "react": "18.2.0",

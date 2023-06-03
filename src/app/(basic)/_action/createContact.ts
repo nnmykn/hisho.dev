@@ -1,39 +1,41 @@
 'use server'
 
 import { z } from 'zod'
+import { CreateContactService } from '@/src/app/(basic)/_action/createContact.service'
+import {
+  CreateContactInput,
+  createContactInputSchema,
+} from '@/src/app/(basic)/_action/craeteContact.entity'
 
-const createContactInputSchema = z.object({
-  name: z.string().min(1).max(50),
-  email: z.string().email(),
-  message: z.string().min(1).max(500),
-})
+export type CreateContactError =
+  z.typeToFlattenedError<CreateContactInput>['fieldErrors']
 
-type CreateContactInput = typeof createContactInputSchema
-export type CreateContactError = z.typeToFlattenedError<
-  z.output<CreateContactInput>
->['fieldErrors']
-
-type Result =
-  | ({
+export type CreateContactResult =
+  | {
       success: true
-    } & z.output<CreateContactInput>)
+      message: string
+    }
   | {
       success: false
+      message: undefined
       error: CreateContactError
+    }
+  | {
+      success: false
+      message: string
+      error: undefined
     }
 
 export const createContact = async (
-  createContactInput: z.output<CreateContactInput>
-): Promise<Result> => {
+  createContactInput: CreateContactInput
+): Promise<CreateContactResult> => {
   const parsedInput = createContactInputSchema.safeParse(createContactInput)
   if (parsedInput.success) {
-    return {
-      success: true,
-      ...parsedInput.data,
-    }
+    return await CreateContactService.create(parsedInput.data)
   } else {
     return {
       success: false,
+      message: undefined,
       error: parsedInput.error.flatten().fieldErrors,
     }
   }
