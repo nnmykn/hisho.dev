@@ -14,9 +14,9 @@
     "lint:stylelint": "stylelint --ignore-path .gitignore './src/**/*.css'",
     "lint:prettier": "prettier --check .",
     "format": "run-s format:*",
-    "format:eslint": "pnpm lint:next --fix",
-    "format:stylelint": "pnpm lint:stylelint --fix",
-    "format:prettier": "pnpm lint:prettier --write",
+    "format:eslint": "npm run lint:next --fix",
+    "format:stylelint": "npm run lint:stylelint --fix",
+    "format:prettier": "npm run lint:prettier --write",
     "test": "run-s test:*",
     "test:component": "vitest run",
     "test:e2e": "playwright test -c playwright.config.e2e.ts"
@@ -68,6 +68,7 @@
     "vitest": "^0.31.4"
   },
   "volta": {
-    "node": "18.12.1"
+    "node": "18.12.1",
+    "npm": "8.19.4"
   }
 }
