@@ -1,4 +1,4 @@
-import { CreateContactForm } from '@/src/app/(basic)/_component/CreateContactForm'
+import { CreateContactForm } from '@/src/app/(basic)/_component/CreateContactForm/CreateContactForm'
 
 const Page = () => {
   return (

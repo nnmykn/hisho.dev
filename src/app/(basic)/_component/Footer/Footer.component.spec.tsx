@@ -1,4 +1,4 @@
-import { Footer } from '@/src/component/Footer/Footer'
+import { Footer } from '@/src/app/(basic)/_component/Footer/Footer'
 import { render, screen } from '@testing-library/react'
 import { describe, test, expect } from 'vitest'
 

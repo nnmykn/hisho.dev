@@ -1,11 +1,11 @@
 'use server'
 
 import { z } from 'zod'
-import { CreateContactService } from '@/src/app/(basic)/_action/createContact.service'
+import { CreateContactService } from '@/src/app/(basic)/_action/createContact/createContact.service'
 import {
   CreateContactInput,
   createContactInputSchema,
-} from '@/src/app/(basic)/_action/craeteContact.entity'
+} from '@/src/app/(basic)/_action/createContact/craeteContact.entity'
 
 export type CreateContactError =
   z.typeToFlattenedError<CreateContactInput>['fieldErrors']
