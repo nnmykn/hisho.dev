@@ -60,6 +60,7 @@ const zennContentsSchema = z
     )
   })
 
+export type ZennContent = z.output<typeof zennContentsSchema>[number]
 export type GetZennContentsResult = z.output<typeof zennContentsSchema>
 
 export const ZENN_CONTENT_API_URL =
