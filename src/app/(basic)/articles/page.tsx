@@ -1,5 +1,6 @@
 import { fetchZennContents } from '@/src/app/(basic)/articles/_feature/zenn/fetchZennContents'
 import { ZennCard } from '@/src/app/(basic)/articles/_feature/zenn/ZennCard'
+import { ExternalLink } from '@/src/component/Link/ExternalLink'
 
 const Page = async () => {
   const zennContents = await fetchZennContents()
@@ -12,13 +13,12 @@ const Page = async () => {
       >
         {zennContents.map((zennContent, index) => (
           <li key={`li_${zennContent.id}_${index}`}>
-            <a
+            <ExternalLink
               className={'hover:opacity-80 transition-opacity'}
               href={zennContent.url}
-              target={'_blank'}
             >
               <ZennCard zenn={zennContent} />
-            </a>
+            </ExternalLink>
           </li>
         ))}
       </ul>
