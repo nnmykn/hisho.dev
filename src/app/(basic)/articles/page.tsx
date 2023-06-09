@@ -1,5 +1,5 @@
-import { fetchZennContents } from '@/src/app/(basic)/zenn/_feature/zenn/fetchZennContents'
-import { ZennCard } from '@/src/app/(basic)/zenn/_feature/zenn/ZennCard'
+import { fetchZennContents } from '@/src/app/(basic)/articles/_feature/zenn/fetchZennContents'
+import { ZennCard } from '@/src/app/(basic)/articles/_feature/zenn/ZennCard'
 
 const Page = async () => {
   const zennContents = await fetchZennContents()
