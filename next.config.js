@@ -17,9 +17,11 @@ const nextConfig = () => {
      * @see https://nextjs.org/docs/architecture/nextjs-compiler#remove-react-properties
      */
     compiler: {
-      removeConsole: {
-        exclude: ['error'],
-      },
+      removeConsole: __PROD__
+        ? {
+            exclude: ['error'],
+          }
+        : false,
       reactRemoveProperties: __PROD__
         ? { properties: ['^data-testid'] }
         : false,
