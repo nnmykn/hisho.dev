@@ -1,6 +1,13 @@
-export const Logo = () => {
+import { ComponentProps } from 'react'
+
+type Props = Pick<ComponentProps<'span'>, 'className'>
+
+export const Logo = ({ className }: Props) => {
   return (
-    <span className={'block w-full'} style={{ aspectRatio: '27/4.61' }}>
+    <span
+      className={`block w-full ${className ? className : ''}`}
+      style={{ aspectRatio: '27/4.61' }}
+    >
       <svg viewBox={'0 0 27 4.61'} role={'img'}>
         <title>hisho</title>
         <path

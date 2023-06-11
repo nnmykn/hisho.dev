@@ -9,18 +9,24 @@ export const Header = () => {
         <InternalLink
           data-testid={'logoLink'}
           className={
-            'w-36 text-primary transform translate-y-1 transition-colors hover:text-opacity-90'
+            'w-36 text-primary hover:text-opacity-80 focus:text-opacity-80'
           }
           href={'/'}
         >
-          <Logo />
+          <Logo className={'transform translate-y-1 transition-colors'} />
         </InternalLink>
         <Spacer isHorizontal />
         <div className={'flex items-end gap-2'}>
-          <InternalLink className={'hover:underline'} href={'/articles'}>
+          <InternalLink
+            className={'hover:underline focus:underline'}
+            href={'/articles'}
+          >
             Articles
           </InternalLink>
-          <InternalLink className={'hover:underline'} href={'/contact'}>
+          <InternalLink
+            className={'hover:underline focus:underline'}
+            href={'/contact'}
+          >
             Contact
           </InternalLink>
         </div>
