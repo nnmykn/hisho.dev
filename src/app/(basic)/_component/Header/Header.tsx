@@ -1,18 +1,29 @@
-import Link from 'next/link'
 import { Logo } from '@/src/icon/Logo/Logo'
+import { InternalLink } from '@/src/component/Link/InternalLink'
+import { Spacer } from '@/src/component/Spacer/Spacer'
 
 export const Header = () => {
   return (
     <header className={'bg-accent text-primary overflow-hidden'}>
-      <div className={'wrapper'}>
-        <Link
+      <div className={'wrapper flex'}>
+        <InternalLink
+          data-testid={'logoLink'}
           className={
-            'w-full max-w-sm mx-auto text-primary transform translate-y-1 transition-colors hover:text-opacity-90'
+            'w-36 text-primary transform translate-y-1 transition-colors hover:text-opacity-90'
           }
           href={'/'}
         >
           <Logo />
-        </Link>
+        </InternalLink>
+        <Spacer isHorizontal />
+        <div className={'flex items-end gap-2'}>
+          <InternalLink className={'hover:underline'} href={'/articles'}>
+            Articles
+          </InternalLink>
+          <InternalLink className={'hover:underline'} href={'/contact'}>
+            Zenn
+          </InternalLink>
+        </div>
       </div>
     </header>
   )

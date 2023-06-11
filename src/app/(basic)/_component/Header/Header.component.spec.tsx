@@ -4,8 +4,8 @@ import { describe, test, expect } from 'vitest'
 
 describe('Headerコンポーネントのテスト', () => {
   render(<Header />)
-  test('リンクのhrefがトップページかどうか', () => {
-    const link = screen.getByRole('link')
+  test('ロゴのリンクのhrefがトップページかどうか', () => {
+    const link = screen.getByTestId('logoLink')
     expect(link).toHaveAttribute('href', '/')
   })
 })
