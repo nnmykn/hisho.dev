@@ -13,6 +13,17 @@ const nextConfig = () => {
       typedRoutes: true,
       serverActions: true,
     },
+    /**
+     * @see https://nextjs.org/docs/architecture/nextjs-compiler#remove-react-properties
+     */
+    compiler: {
+      removeConsole: {
+        exclude: ['error'],
+      },
+      reactRemoveProperties: __PROD__
+        ? { properties: ['^data-testid'] }
+        : false,
+    },
   }
 }
 
