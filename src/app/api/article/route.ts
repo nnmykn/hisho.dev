@@ -64,7 +64,7 @@ export type ZennContent = z.output<typeof zennContentsSchema>[number]
 export type GetZennContentsResult = z.output<typeof zennContentsSchema>
 
 export const ZENN_CONTENT_API_URL =
-  `${NEXT_PUBLIC_FRONTEND_URL}/api/article/zenn` as const
+  `${NEXT_PUBLIC_FRONTEND_URL}/api/article` as const
 export async function GET(): Promise<NextResponse<GetZennContentsResult>> {
   try {
     const rss = await parse(`${ZENN_URL}/feed`)

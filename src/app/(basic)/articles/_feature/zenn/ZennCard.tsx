@@ -1,5 +1,5 @@
 import { ExternalImage } from '@/src/component/Image/ExternalImage'
-import { ZennContent } from '@/src/app/api/article/zenn/route'
+import { ZennContent } from '@/src/app/api/article/route'
 
 type Props = {
   zenn: Pick<ZennContent, 'title' | 'type' | 'publishedAt' | 'url' | 'image'>
