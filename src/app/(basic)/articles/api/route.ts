@@ -5,10 +5,21 @@ import { NEXT_PUBLIC_FRONTEND_URL } from '@/src/constant/constant'
 
 const ZENN_URL = 'https://zenn.dev/hisho' as const
 
-const zennContentTypes = {
-  article: 'article',
-  book: 'book',
-} as const
+export type Article = {
+  title: string
+  id: string
+  content: string
+  excerpt: string
+  createdAt: number
+  publishedAt: number
+  url: string
+  author: string
+  category: 'zenn'
+  image: {
+    url: string
+    type: string
+  } | null
+}
 
 const zennContentsSchema = z
   .object({
@@ -27,27 +38,22 @@ const zennContentsSchema = z
       })
       .array(),
   })
-  .transform((data) => {
+  .transform<Article[]>((data) => {
     return data.items.map(
       ({ title, link, description, enclosures, published }) => {
-        const isBooks = z
-          .string()
-          .startsWith(`${ZENN_URL}/books/`)
-          .safeParse(link)
-
         return {
           title,
           // zennの記事からidを取得する
           // https://zenn.dev/{{userName}}/articles/{{id}} -> [{{userName}},'articles',{{id}}] -> {{id}}
           id: link.split('/').at(-1) ?? '',
+          excerpt: description.replaceAll('\n', ''),
           // '内容\n内容' -> '内容内容'
-          description: description.replaceAll('\n', ''),
+          content: description,
+          createdAt: published,
           publishedAt: published,
           url: link,
-          // zennの記事のurlからbookかarticleを判定する 'book' or 'article'
-          type: isBooks.success
-            ? zennContentTypes.book
-            : zennContentTypes.article,
+          author: 'hisho',
+          category: 'zenn',
           // OG画像
           image: enclosures?.at(0)
             ? {
@@ -60,12 +66,11 @@ const zennContentsSchema = z
     )
   })
 
-export type ZennContent = z.output<typeof zennContentsSchema>[number]
-export type GetZennContentsResult = z.output<typeof zennContentsSchema>
+export type GetArticleResult = Article[]
 
-export const ZENN_CONTENT_API_URL =
+export const ARTICLE_API_URL =
   `${NEXT_PUBLIC_FRONTEND_URL}/articles/api` as const
-export async function GET(): Promise<NextResponse<GetZennContentsResult>> {
+export async function GET(): Promise<NextResponse<GetArticleResult>> {
   try {
     const rss = await parse(`${ZENN_URL}/feed`)
     const parsed = zennContentsSchema.safeParse(rss)

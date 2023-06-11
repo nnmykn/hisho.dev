@@ -1,9 +1,9 @@
-import { fetchZennContents } from '@/src/app/(basic)/articles/_feature/zenn/fetchZennContents'
-import { ZennCard } from '@/src/app/(basic)/articles/_feature/zenn/ZennCard'
 import { ExternalLink } from '@/src/component/Link/ExternalLink'
+import { fetchArticles } from '@/src/app/(basic)/articles/_feature/article/fetchArticles'
+import { ArticleCard } from '@/src/app/(basic)/articles/_feature/article/ArticleCard'
 
 const Page = async () => {
-  const zennContents = await fetchZennContents()
+  const articles = await fetchArticles()
   return (
     <div>
       <ul
@@ -11,13 +11,13 @@ const Page = async () => {
           'grid gap-3 grid-cols-[repeat(auto-fit,_minmax(360px,_1fr))]'
         }
       >
-        {zennContents.map((zennContent, index) => (
-          <li key={`li_${zennContent.id}_${index}`}>
+        {articles.map((article, index) => (
+          <li key={`li_${article.id}_${index}`}>
             <ExternalLink
               className={'hover:opacity-80 transition-opacity'}
-              href={zennContent.url}
+              href={article.url}
             >
-              <ZennCard zenn={zennContent} />
+              <ArticleCard article={article} />
             </ExternalLink>
           </li>
         ))}
