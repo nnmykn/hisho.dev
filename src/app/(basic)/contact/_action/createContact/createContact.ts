@@ -5,7 +5,7 @@ import { CreateContactService } from '@/src/app/(basic)/contact/_action/createCo
 import {
   CreateContactInput,
   createContactInputSchema,
-} from '@/src/app/(basic)/contact/_action/createContact/craeteContact.entity'
+} from '@/src/app/(basic)/contact/_action/createContact/craeteContact.input'
 
 export type CreateContactError =
   z.typeToFlattenedError<CreateContactInput>['fieldErrors']

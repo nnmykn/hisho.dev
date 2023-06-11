@@ -3,7 +3,7 @@ import { env } from '@/src/constant/env'
 import { joinWithNewLines } from '@/src/util/joinWithNewLines/joinWithNewLines'
 import { sendMail } from '@/src/lib/sendGrid/sendMail'
 import { CreateContactResult } from '@/src/app/(basic)/contact/_action/createContact/createContact'
-import { CreateContactInput } from '@/src/app/(basic)/contact/_action/createContact/craeteContact.entity'
+import { CreateContactInput } from '@/src/app/(basic)/contact/_action/createContact/craeteContact.input'
 
 export class CreateContactService {
   public static readonly create = async (
