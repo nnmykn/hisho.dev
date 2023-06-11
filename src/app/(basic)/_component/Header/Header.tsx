@@ -21,7 +21,7 @@ export const Header = () => {
             Articles
           </InternalLink>
           <InternalLink className={'hover:underline'} href={'/contact'}>
-            Zenn
+            Contact
           </InternalLink>
         </div>
       </div>
