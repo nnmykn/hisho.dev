@@ -3,7 +3,7 @@ import { Route } from 'next'
 import { ComponentProps } from 'react'
 
 type Props<T extends string> = Pick<
-  ComponentProps<typeof Link>,
+  ComponentProps<'a'>,
   'className' | 'children'
 > & {
   href: Route<T>
