@@ -2,8 +2,8 @@ import { postChatMessage } from '@/src/lib/slack/postChatMessage'
 import { env } from '@/src/constant/env'
 import { joinWithNewLines } from '@/src/util/joinWithNewLines/joinWithNewLines'
 import { sendMail } from '@/src/lib/sendGrid/sendMail'
-import { CreateContactResult } from '@/src/app/(basic)/_action/createContact/createContact'
-import { CreateContactInput } from '@/src/app/(basic)/_action/createContact/craeteContact.entity'
+import { CreateContactResult } from '@/src/app/(basic)/contact/_action/createContact/createContact'
+import { CreateContactInput } from '@/src/app/(basic)/contact/_action/createContact/craeteContact.entity'
 
 export class CreateContactService {
   public static readonly create = async (

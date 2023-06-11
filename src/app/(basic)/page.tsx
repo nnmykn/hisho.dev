@@ -1,11 +1,5 @@
-import { CreateContactForm } from '@/src/app/(basic)/_component/CreateContactForm/CreateContactForm'
-
 const Page = () => {
-  return (
-    <div>
-      <CreateContactForm />
-    </div>
-  )
+  return <div>page</div>
 }
 
 export default Page

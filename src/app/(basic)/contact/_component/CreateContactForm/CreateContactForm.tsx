@@ -6,7 +6,7 @@ import { Textarea } from '@/src/component/Form/Textarea/Textarea'
 import {
   createContact,
   CreateContactError,
-} from '@/src/app/(basic)/_action/createContact/createContact'
+} from '@/src/app/(basic)/contact/_action/createContact/createContact'
 import { useState, useTransition } from 'react'
 
 const schema = z.object({
