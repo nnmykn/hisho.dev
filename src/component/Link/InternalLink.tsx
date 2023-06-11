@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Route } from 'next'
+import type { Route } from 'next'
 import { ComponentProps } from 'react'
 
 type Props<T extends string> = Pick<
