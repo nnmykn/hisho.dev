@@ -2,18 +2,16 @@ import '@/src/app/app.css'
 import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: {
-      default: 'Hisho.dev',
-      template: '%s | Hisho.dev',
-    },
-    description: ``,
-    robots: {
-      index: false,
-      follow: false,
-    },
-  }
+export const metadata: Metadata = {
+  title: {
+    default: 'Hisho.dev',
+    template: '%s | Hisho.dev',
+  },
+  description: ``,
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 type Props = {
