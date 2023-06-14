@@ -1,7 +1,7 @@
 import {
   GetArticleResult,
   ARTICLE_API_URL,
-} from '@/src/app/(basic)/articles/api/route'
+} from '@/src/app/(basic)/articles/api/constant'
 
 export const fetchArticles = async (): Promise<GetArticleResult> => {
   const response = await fetch(ARTICLE_API_URL)
