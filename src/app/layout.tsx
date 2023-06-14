@@ -1,8 +1,10 @@
 import '@/src/app/app.css'
 import type { ReactNode } from 'react'
 import { Metadata } from 'next'
+import { NEXT_PUBLIC_FRONTEND_URL } from '@/src/constant/constant'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(NEXT_PUBLIC_FRONTEND_URL),
   title: {
     default: 'Hisho.dev',
     template: '%s | Hisho.dev',
