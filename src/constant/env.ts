@@ -8,16 +8,13 @@ export const env = createEnv({
     SLACK_CONTACT_CHANNEL_CONVERSATION_ID: z.string().min(1),
     SENDGRID_API_KEY: z.string().min(1),
     FROM_EMAIL: z.string().email(),
-    NODE_ENV: z.enum(['development', 'production', 'test'] as const),
+    NODE_ENV: z.enum(['development', 'production'] as const),
   },
   client: {
-    NEXT_PUBLIC_NODE_ENV: z.enum([
-      'development',
-      'production',
-      'test',
-    ] as const),
+    NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'production'] as const),
     NEXT_PUBLIC_VERCEL_URL: z.string().min(1).catch(''),
     NEXT_PUBLIC_PORT: z.coerce.number().int().catch(3000),
+    NEXT_PUBLIC_LOCAL_ENV: z.enum(['development', 'production'] as const),
   },
   runtimeEnv: {
     SLACK_USERNAME: process.env['SLACK_USERNAME'],
@@ -30,5 +27,6 @@ export const env = createEnv({
     NEXT_PUBLIC_PORT: process.env['NEXT_PUBLIC_PORT'],
     NEXT_PUBLIC_NODE_ENV: process.env['NODE_ENV'],
     NODE_ENV: process.env['NODE_ENV'],
+    NEXT_PUBLIC_LOCAL_ENV: process.env['NEXT_PUBLIC_LOCAL_ENV'],
   },
 })
