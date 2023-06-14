@@ -14,8 +14,8 @@ export async function GET(): Promise<NextResponse<GetArticleResult>> {
     if (parsed.success) {
       return NextResponse.json(parsed.data)
     }
-    throw new Error()
+    return NextResponse.json([])
   } catch {
-    throw new Error()
+    return NextResponse.json([])
   }
 }
