@@ -2,6 +2,7 @@ import { ExternalLink } from '@/src/component/Link/ExternalLink'
 import { fetchArticles } from '@/src/app/(basic)/articles/_feature/article/fetchArticles'
 import { ArticleCard } from '@/src/app/(basic)/articles/_feature/article/ArticleCard'
 
+export const runtime = 'edge'
 const Page = async () => {
   const articles = await fetchArticles()
   return (
