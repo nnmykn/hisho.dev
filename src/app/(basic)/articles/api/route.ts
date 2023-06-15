@@ -6,6 +6,8 @@ import {
   zennContentsSchema,
 } from '@/src/app/(basic)/articles/api/constant'
 
+export const runtime = 'edge'
+
 //TODO service
 export async function GET(): Promise<NextResponse<GetArticleResult>> {
   try {
