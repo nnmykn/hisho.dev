@@ -1,6 +1,20 @@
-import '@src/app/app.css'
-import { ClientProvider } from '@src/lib/trpc/ClientProvider/ClientProvider'
+import '@/src/app/app.css'
 import type { ReactNode } from 'react'
+import { Metadata } from 'next'
+import { NEXT_PUBLIC_FRONTEND_URL } from '@/src/constant/constant'
+
+export const metadata: Metadata = {
+  metadataBase: new URL(NEXT_PUBLIC_FRONTEND_URL),
+  title: {
+    default: 'Hisho.dev',
+    template: '%s | Hisho.dev',
+  },
+  description: ``,
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 type Props = {
   children: ReactNode
@@ -8,12 +22,10 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <ClientProvider>
-      <html>
-        <head />
-        <body className={'bg-primary text-write font-body'}>{children}</body>
-      </html>
-    </ClientProvider>
+    <html>
+      <head />
+      <body className={'bg-primary text-write font-body'}>{children}</body>
+    </html>
   )
 }
 

@@ -23,4 +23,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run build
+        env:
+          SLACK_USERNAME: ${{ secrets.SLACK_USERNAME }}
+          SLACK_BOT_USER_OAUTH_TOKEN: ${{ secrets.SLACK_BOT_USER_OAUTH_TOKEN }}
+          SLACK_CONTACT_CHANNEL_CONVERSATION_ID: ${{ secrets.SLACK_CONTACT_CHANNEL_CONVERSATION_ID }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          NEXT_PUBLIC_PORT: ${{ secrets.NEXT_PUBLIC_PORT }}
+          NEXT_PUBLIC_LOCAL_ENV: ${{ secrets.NEXT_PUBLIC_LOCAL_ENV }}
         run: pnpm build

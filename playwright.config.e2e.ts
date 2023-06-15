@@ -4,8 +4,7 @@ import path from 'path'
 
 dotenv.config({ path: path.resolve(__dirname, '.env.local') })
 
-const NEXT_PUBLIC_FRONTEND_URL =
-  process.env['NEXT_PUBLIC_FRONTEND_URL'] ?? 'http://localhost:3000'
+const NEXT_PUBLIC_FRONTEND_URL = 'http://localhost:3000'
 
 const config: PlaywrightTestConfig = {
   projects: [

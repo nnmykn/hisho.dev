@@ -1,23 +1,30 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @returns {import('next').NextConfig}
+ * */
 const nextConfig = () => {
   const __PROD__ = process.env.NODE_ENV === 'production'
 
   return {
+    poweredByHeader: false,
+    trailingSlash: true,
     reactStrictMode: true,
     experimental: {
       appDir: true,
+      typedRoutes: true,
+      serverActions: true,
     },
-    pageExtensions: ['api.ts', 'tsx'],
-    async redirects() {
-      return __PROD__
-        ? [
-            {
-              source: '/:path((?!404$).*)',
-              destination: '/404',
-              permanent: true,
-            },
-          ]
-        : []
+    /**
+     * @see https://nextjs.org/docs/architecture/nextjs-compiler#remove-react-properties
+     */
+    compiler: {
+      removeConsole: __PROD__
+        ? {
+            exclude: ['error'],
+          }
+        : false,
+      reactRemoveProperties: __PROD__
+        ? { properties: ['^data-testid'] }
+        : false,
     },
   }
 }
