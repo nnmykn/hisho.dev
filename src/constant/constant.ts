@@ -1,10 +1,9 @@
 import { env } from '@/src/constant/env'
 import { match } from 'ts-pattern'
 
-export const NEXT_PUBLIC_FRONTEND_URL = match(env.NEXT_PUBLIC_LOCAL_ENV)
+export const FRONTEND_URL = match(env)
   .with(
-    'development',
-    () => `http://localhost:${env.NEXT_PUBLIC_PORT}` as const
+    { NODE_ENV: 'production', LOCAL_ENV: 'production' },
+    () => `https://${env.VERCEL_URL}` as const
   )
-  .with('production', () => `https://${env.NEXT_PUBLIC_VERCEL_URL}` as const)
-  .exhaustive()
+  .otherwise(() => `http://localhost:3000` as const)

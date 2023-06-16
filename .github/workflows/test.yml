@@ -34,4 +34,5 @@ jobs:
           FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
           NEXT_PUBLIC_PORT: ${{ secrets.NEXT_PUBLIC_PORT }}
           NEXT_PUBLIC_LOCAL_ENV: ${{ secrets.NEXT_PUBLIC_LOCAL_ENV }}
+          LOCAL_ENV: ${{ secrets.LOCAL_ENV }}
         run: pnpm test

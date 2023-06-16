@@ -1,5 +1,4 @@
 import { z } from 'zod'
-import { NEXT_PUBLIC_FRONTEND_URL } from '@/src/constant/constant'
 
 export const ZENN_URL = 'https://zenn.dev/hisho' as const
 
@@ -65,6 +64,3 @@ export const zennContentsSchema = z
   })
 
 export type GetArticleResult = Article[]
-
-export const ARTICLE_API_URL =
-  `${NEXT_PUBLIC_FRONTEND_URL}/articles/api` as const
