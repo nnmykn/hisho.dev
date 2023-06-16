@@ -1,6 +1,6 @@
-import { fetchArticles } from '@/src/app/(basic)/articles/_feature/article/fetchArticles'
 import { ExternalLink } from '@/src/component/Link/ExternalLink'
 import { ArticleCard } from '@/src/app/(basic)/articles/_feature/article/ArticleCard'
+import { fetchArticles } from '@/src/app/(basic)/articles/_api/route'
 
 const Page = async () => {
   const articles = await fetchArticles()
