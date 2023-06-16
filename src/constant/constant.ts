@@ -1,7 +1,9 @@
 import { env } from '@/src/constant/env'
 import { match } from 'ts-pattern'
 
-export const FRONTEND_URL = match(env.NODE_ENV)
-  .with('development', () => `http://localhost:3000` as const)
-  .with('production', () => `https://${env.VERCEL_URL}` as const)
-  .exhaustive()
+export const FRONTEND_URL = match(env)
+  .with(
+    { NODE_ENV: 'production', LOCAL_ENV: 'production' },
+    () => `https://${env.VERCEL_URL}` as const
+  )
+  .otherwise(() => `http://localhost:3000` as const)
