@@ -3,7 +3,7 @@ import {
   GetArticleResult,
   ZENN_URL,
   zennContentsSchema,
-} from '@/src/app/(basic)/articles/_api/constant'
+} from '@/src/app/(basic)/articles/api/constant'
 
 export const fetchArticles = async (): Promise<GetArticleResult> => {
   try {
