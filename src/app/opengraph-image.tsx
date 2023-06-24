@@ -4,8 +4,8 @@ export const runtime = 'edge'
 
 export const alt = 'Hisho.dev'
 export const size = {
-  width: 1200,
   height: 630,
+  width: 1200,
 }
 
 export const contentType = 'image/png'
@@ -16,14 +16,14 @@ export default function () {
     (
       <div
         style={{
-          fontSize: 128,
+          alignItems: 'center',
           background: '#4ECCA3',
           color: '#232931',
-          width: '100%',
-          height: '100%',
           display: 'flex',
-          alignItems: 'center',
+          fontSize: 128,
+          height: '100%',
           justifyContent: 'center',
+          width: '100%',
         }}
       >
         Hisho.dev

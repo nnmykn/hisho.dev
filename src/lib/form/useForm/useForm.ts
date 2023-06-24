@@ -1,6 +1,7 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm as useRHForm, UseFormProps } from 'react-hook-form'
 import type { z } from 'zod'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+import { UseFormProps, useForm as useRHForm } from 'react-hook-form'
 
 type Props<TSchema extends z.ZodType> = Omit<
   UseFormProps<TSchema['_input']>,

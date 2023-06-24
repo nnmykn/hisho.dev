@@ -1,5 +1,5 @@
-import { describe, expect, test } from 'vitest'
 import { joinWithNewLines } from '@/src/util/joinWithNewLines/joinWithNewLines'
+import { describe, expect, test } from 'vitest'
 
 describe('joinWithNewLinesのテスト', () => {
   test('ただしく改行されるかどうか', () => {

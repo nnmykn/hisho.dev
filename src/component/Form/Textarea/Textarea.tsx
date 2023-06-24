@@ -4,10 +4,10 @@ import { ComponentProps, forwardRef } from 'react'
 
 export const Textarea = forwardRef<
   HTMLTextAreaElement,
-  Pick<ComponentProps<'textarea'>, 'onChange' | 'onBlur' | 'name'>
+  Pick<ComponentProps<'textarea'>, 'name' | 'onBlur' | 'onChange'>
 >(({ ...props }, ref) => {
   return (
-    <textarea ref={ref} className={'text-primary block w-full'} {...props} />
+    <textarea className={'block w-full text-primary'} ref={ref} {...props} />
   )
 })
 

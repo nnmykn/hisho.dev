@@ -1,29 +1,29 @@
 'use server'
 
-import { z } from 'zod'
-import { CreateContactService } from '@/src/app/(basic)/contact/_action/createContact/createContact.service'
 import {
   CreateContactInput,
   createContactInputSchema,
 } from '@/src/app/(basic)/contact/_action/createContact/craeteContact.input'
+import { CreateContactService } from '@/src/app/(basic)/contact/_action/createContact/createContact.service'
+import { z } from 'zod'
 
 export type CreateContactError =
   z.typeToFlattenedError<CreateContactInput>['fieldErrors']
 
 export type CreateContactResult =
   | {
-      success: true
-      message: string
-    }
-  | {
-      success: false
-      message: undefined
       error: CreateContactError
+      message: undefined
+      success: false
     }
   | {
-      success: false
-      message: string
       error: undefined
+      message: string
+      success: false
+    }
+  | {
+      message: string
+      success: true
     }
 
 export const createContact = async (
@@ -34,9 +34,9 @@ export const createContact = async (
     return await CreateContactService.create(parsedInput.data)
   } else {
     return {
-      success: false,
-      message: undefined,
       error: parsedInput.error.flatten().fieldErrors,
+      message: undefined,
+      success: false,
     }
   }
 }

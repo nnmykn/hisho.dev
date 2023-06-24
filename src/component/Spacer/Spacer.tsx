@@ -4,8 +4,8 @@ const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
 type List = (typeof list)[number]
 
 type Props = {
-  size?: List
   isHorizontal?: boolean
+  size?: List
 }
 
 const resolveValue = (value: List | undefined) => {
@@ -16,15 +16,15 @@ const resolveValue = (value: List | undefined) => {
   }
   return undefined
 }
-export const Spacer = memo(({ size, isHorizontal = false }: Props) => {
+export const Spacer = memo(({ isHorizontal = false, size }: Props) => {
   return (
     <span
-      className={`block ${isHorizontal ? 'flex-1' : ''}`}
       style={{
-        width: isHorizontal ? resolveValue(size) : undefined,
         height: isHorizontal ? undefined : resolveValue(size),
+        width: isHorizontal ? resolveValue(size) : undefined,
       }}
       aria-hidden
+      className={`block ${isHorizontal ? 'flex-1' : ''}`}
     />
   )
 })

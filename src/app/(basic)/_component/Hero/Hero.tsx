@@ -1,9 +1,9 @@
 'use client'
 
-import { Canvas } from '@react-three/fiber'
 import { animated, useSpring } from '@react-spring/three'
-import { ComponentProps, useEffect, useRef } from 'react'
+import { Canvas } from '@react-three/fiber'
 import { usePathname } from 'next/navigation'
+import { ComponentProps, useEffect, useRef } from 'react'
 
 const Box = () => {
   const pathname = usePathname()
@@ -27,10 +27,10 @@ const Box = () => {
 
 export const Hero = () => {
   return (
-    <div className={'bg-write bg-opacity-10'}>
+    <div className={'bg-write/10'}>
       <Canvas camera={{ position: [3, 3, 3] }}>
         <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+        <spotLight angle={0.15} penumbra={1} position={[10, 10, 10]} />
         <scene>
           <Box />
         </scene>

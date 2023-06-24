@@ -4,13 +4,13 @@ import { ComponentProps, forwardRef } from 'react'
 
 export const Input = forwardRef<
   HTMLInputElement,
-  Pick<ComponentProps<'input'>, 'onChange' | 'onBlur' | 'name' | 'type'>
+  Pick<ComponentProps<'input'>, 'name' | 'onBlur' | 'onChange' | 'type'>
 >(({ type, ...props }, ref) => {
   return (
     <input
+      className={'block w-full text-primary'}
       ref={ref}
       type={'type'}
-      className={'text-primary block w-full'}
       {...props}
     />
   )

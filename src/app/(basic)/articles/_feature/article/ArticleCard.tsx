@@ -1,8 +1,8 @@
-import { ExternalImage } from '@/src/component/Image/ExternalImage'
 import { Article } from '@/src/app/(basic)/articles/api/constant'
+import { ExternalImage } from '@/src/component/Image/ExternalImage'
 
 type Props = {
-  article: Pick<Article, 'title' | 'category' | 'publishedAt' | 'url' | 'image'>
+  article: Pick<Article, 'category' | 'image' | 'publishedAt' | 'title' | 'url'>
 }
 
 export const ArticleCard = ({ article }: Props) => {

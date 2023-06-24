@@ -1,18 +1,19 @@
-import '@/src/app/app.css'
 import type { ReactNode } from 'react'
-import { Metadata } from 'next'
+
+import '@/src/app/app.css'
 import { FRONTEND_URL } from '@/src/constant/constant'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  description: ``,
   metadataBase: new URL(FRONTEND_URL),
+  robots: {
+    follow: false,
+    index: false,
+  },
   title: {
     default: 'Hisho.dev',
     template: '%s | Hisho.dev',
-  },
-  description: ``,
-  robots: {
-    index: false,
-    follow: false,
   },
 }
 
@@ -24,7 +25,7 @@ export default function ({ children }: Props) {
   return (
     <html>
       <head />
-      <body className={'bg-primary text-write font-body'}>{children}</body>
+      <body className={'bg-primary font-body text-write'}>{children}</body>
     </html>
   )
 }

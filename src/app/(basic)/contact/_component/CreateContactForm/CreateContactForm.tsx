@@ -1,18 +1,18 @@
 'use client'
-import { useForm } from '@/src/lib/form/useForm/useForm'
-import { z } from 'zod'
+import {
+  CreateContactError,
+  createContact,
+} from '@/src/app/(basic)/contact/_action/createContact/createContact'
 import { Input } from '@/src/component/Form/Input/Input'
 import { Textarea } from '@/src/component/Form/Textarea/Textarea'
-import {
-  createContact,
-  CreateContactError,
-} from '@/src/app/(basic)/contact/_action/createContact/createContact'
+import { useForm } from '@/src/lib/form/useForm/useForm'
 import { useState, useTransition } from 'react'
+import { z } from 'zod'
 
 const schema = z.object({
-  name: z.string(),
   email: z.string(),
   message: z.string(),
+  name: z.string(),
 })
 export const CreateContactForm = () => {
   const [isPending, startTransition] = useTransition()
