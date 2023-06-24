@@ -4,7 +4,7 @@ import { fetchArticles } from '@/src/app/(basic)/articles/api/route'
 
 export const dynamic = 'force-dynamic'
 
-const Page = async () => {
+export default async function () {
   const articles = await fetchArticles()
   return (
     <div>
@@ -27,5 +27,3 @@ const Page = async () => {
     </div>
   )
 }
-
-export default Page

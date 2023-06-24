@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+export default function ({ children }: Props) {
   return (
     <div
       className={
@@ -21,5 +21,3 @@ const Layout = ({ children }: Props) => {
     </div>
   )
 }
-
-export default Layout

@@ -20,7 +20,7 @@ type Props = {
   children: ReactNode
 }
 
-const RootLayout = ({ children }: Props) => {
+export default function ({ children }: Props) {
   return (
     <html>
       <head />
@@ -28,5 +28,3 @@ const RootLayout = ({ children }: Props) => {
     </html>
   )
 }
-
-export default RootLayout

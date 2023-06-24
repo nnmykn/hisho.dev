@@ -11,7 +11,7 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default function Image() {
+export default function () {
   return new ImageResponse(
     (
       <div
