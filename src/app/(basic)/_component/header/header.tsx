@@ -1,6 +1,6 @@
 import { InternalLink } from '@/src/component/link/internal-link'
 import { Spacer } from '@/src/component/spacer/spacer'
-import { LogoIcon } from '@/src/icon/logo/logo'
+import { LogoIcon } from '@/src/icon/logo'
 
 export const Header = () => {
   return (
