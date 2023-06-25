@@ -1,4 +1,4 @@
-import { CreateContactForm } from '@/src/app/(basic)/contact/_component/create-contact-form/create-contact-form'
+import { CreateContactForm } from '@/src/feature/contact/create-contact-form/create-contact-form'
 
 export default function () {
   return (

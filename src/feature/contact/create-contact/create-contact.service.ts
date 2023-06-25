@@ -1,6 +1,6 @@
-import { CreateContactInput } from '@/src/app/(basic)/contact/_action/create-contact/craete-contact.input'
-import { CreateContactResult } from '@/src/app/(basic)/contact/_action/create-contact/create-contact'
 import { env } from '@/src/constant/env'
+import { CreateContactInput } from '@/src/feature/contact/create-contact/craete-contact.input'
+import { CreateContactResult } from '@/src/feature/contact/create-contact/create-contact'
 import { sendMail } from '@/src/lib/send-grid/send-mail'
 import { postChatMessage } from '@/src/lib/slack/post-chat-message'
 import { joinWithNewLines } from '@/src/util/join-with-new-lines/join-with-new-lines'

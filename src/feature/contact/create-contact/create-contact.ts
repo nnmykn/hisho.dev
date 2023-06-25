@@ -3,8 +3,8 @@
 import {
   CreateContactInput,
   createContactInputSchema,
-} from '@/src/app/(basic)/contact/_action/create-contact/craete-contact.input'
-import { CreateContactService } from '@/src/app/(basic)/contact/_action/create-contact/create-contact.service'
+} from '@/src/feature/contact/create-contact/craete-contact.input'
+import { CreateContactService } from '@/src/feature/contact/create-contact/create-contact.service'
 import { z } from 'zod'
 
 export type CreateContactError =
