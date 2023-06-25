@@ -13,8 +13,8 @@ import { TailwindcssIcon } from '@/src/icon/tailwindcss'
 import { TwitterIcon } from '@/src/icon/twitter'
 import { TypeScriptIcon } from '@/src/icon/typescript'
 import { ZennIcon } from '@/src/icon/zenn'
-import Image from 'next/image'
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 const skills = [
   {
@@ -78,7 +78,7 @@ export default function () {
     <div className={'grid min-h-[100svh] place-content-center'}>
       <div
         className={
-          'mx-auto w-full max-w-[400px] border-8 bg-black px-5 py-8 [border-image-slice:1_!important] [border-image:linear-gradient(to_right,#1e9600,#fff200,#ff0000)_1_0%] shadow-xl shadow-amber-50'
+          'mx-auto w-full max-w-[400px] border-8 bg-black px-5 py-8 shadow-xl shadow-amber-50 [border-image-slice:1_!important] [border-image:linear-gradient(to_right,#1e9600,#fff200,#ff0000)_1_0%]'
         }
       >
         <div className={'relative mx-auto aspect-square w-full max-w-[100px]'}>
