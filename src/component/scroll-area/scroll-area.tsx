@@ -14,7 +14,6 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
     return (
       <_ScrollArea.Root className={cn('overflow-hidden', className)} ref={ref}>
         <_ScrollArea.Viewport
-          ref={viewportRef}
           onScroll={
             typeof onScrollPositionChange === 'function'
               ? ({ currentTarget }) =>
@@ -25,6 +24,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
               : undefined
           }
           className="h-full w-full rounded"
+          ref={viewportRef}
         >
           {children}
         </_ScrollArea.Viewport>
