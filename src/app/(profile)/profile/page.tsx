@@ -75,16 +75,22 @@ export const metadata: Metadata = {
 
 export default function () {
   return (
-    <div className={'grid min-h-[100svh] place-content-center'}>
+    <div className={'px-4 py-8'}>
       <div
         className={
-          'mx-auto w-full max-w-[400px] border-8 bg-black px-5 py-8 shadow-xl shadow-amber-50 [border-image-slice:1_!important] [border-image:linear-gradient(to_right,#1e9600,#fff200,#ff0000)_1_0%]'
+          'relative mx-auto w-full max-w-[400px] border-8 bg-black px-5 py-8 [border-image-slice:1_!important] [border-image:linear-gradient(to_right,#1e9600,#fff200,#ff0000)_1_0%]'
         }
       >
+        <div
+          className={
+            'absolute -left-4 -top-4 -z-10 h-[calc(100%+32px)] w-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
+          }
+          aria-hidden={true}
+        />
         <div className={'relative mx-auto aspect-square w-full max-w-[100px]'}>
           <Image
             className={
-              'rounded-full border-2 border-write bg-accent object-cover object-center'
+              'rounded-full border-4 border-write bg-accent object-cover object-center'
             }
             alt={''}
             fill
@@ -109,7 +115,9 @@ export default function () {
             {skills.map((skill, index) => (
               <li key={`skill_${skill.name}_${index}`}>
                 <div
-                  className={'flex gap-1 rounded bg-accent px-2 py-1 text-sm'}
+                  className={
+                    'flex gap-1 rounded bg-accent px-2 py-1 text-sm text-gray-600'
+                  }
                 >
                   <div className={'w-5'}>{skill.icon}</div>
                   <span>{skill.name}</span>

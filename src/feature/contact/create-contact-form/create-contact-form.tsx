@@ -1,10 +1,10 @@
 'use client'
+import { Input } from '@/src/component/from/input/input'
+import { Textarea } from '@/src/component/from/textarea/textarea'
 import {
   CreateContactError,
   createContact,
-} from '@/src/app/(basic)/contact/_action/create-contact/create-contact'
-import { Input } from '@/src/component/from/input/input'
-import { Textarea } from '@/src/component/from/textarea/textarea'
+} from '@/src/feature/contact/create-contact/create-contact'
 import { useForm } from '@/src/lib/form/use-form/use-form'
 import { useState, useTransition } from 'react'
 import { z } from 'zod'
