@@ -1,11 +1,12 @@
+import { cn } from '@/src/util/cn/cn'
 import { ComponentProps } from 'react'
 
 type Props = Pick<ComponentProps<'span'>, 'className'>
 
-export const Logo = ({ className }: Props) => {
+export const LogoIcon = ({ className }: Props) => {
   return (
     <span
-      className={`block w-full ${className ? className : ''}`}
+      className={cn('block w-full', className)}
       style={{ aspectRatio: '27/4.61' }}
     >
       <svg role={'img'} viewBox={'0 0 27 4.61'}>

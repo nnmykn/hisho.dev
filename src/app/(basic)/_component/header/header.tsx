@@ -1,6 +1,6 @@
-import { InternalLink } from '@/src/component/Link/InternalLink'
-import { Spacer } from '@/src/component/Spacer/Spacer'
-import { Logo } from '@/src/icon/Logo/Logo'
+import { InternalLink } from '@/src/component/link/internal-link'
+import { Spacer } from '@/src/component/spacer/spacer'
+import { LogoIcon } from '@/src/icon/logo/logo'
 
 export const Header = () => {
   return (
@@ -13,7 +13,7 @@ export const Header = () => {
           data-testid={'logoLink'}
           href={'/'}
         >
-          <Logo className={'translate-y-1 transition-colors'} />
+          <LogoIcon className={'translate-y-1 transition-colors'} />
         </InternalLink>
         <Spacer isHorizontal />
         <div className={'flex items-end gap-2'}>

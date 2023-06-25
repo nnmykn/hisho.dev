@@ -1,4 +1,4 @@
-import { createSendGridClient } from '@/src/lib/sendGrid/createSendGridClient'
+import { createSendGridClient } from '@/src/lib/send-grid/create-send-grid-client'
 
 type Params = {
   fromEmail: string

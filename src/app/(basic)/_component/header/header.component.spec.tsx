@@ -1,4 +1,4 @@
-import { Header } from '@/src/app/(basic)/_component/Header/Header'
+import { Header } from '@/src/app/(basic)/_component/header/header'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, test } from 'vitest'
 

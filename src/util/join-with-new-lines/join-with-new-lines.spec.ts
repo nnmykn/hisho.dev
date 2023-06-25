@@ -1,4 +1,4 @@
-import { joinWithNewLines } from '@/src/util/joinWithNewLines/joinWithNewLines'
+import { joinWithNewLines } from '@/src/util/join-with-new-lines/join-with-new-lines'
 import { describe, expect, test } from 'vitest'
 
 describe('joinWithNewLinesのテスト', () => {
