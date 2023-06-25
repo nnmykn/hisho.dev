@@ -23,7 +23,7 @@ type Props = {
 
 export default function ({ children }: Props) {
   return (
-    <html className={'overflow-hidden'}>
+    <html>
       <head />
       <body className={'bg-primary font-body text-write'}>{children}</body>
     </html>
