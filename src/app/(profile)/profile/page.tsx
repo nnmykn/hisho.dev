@@ -14,6 +14,7 @@ import { TwitterIcon } from '@/src/icon/twitter'
 import { TypeScriptIcon } from '@/src/icon/typescript'
 import { ZennIcon } from '@/src/icon/zenn'
 import Image from 'next/image'
+import { Metadata } from 'next'
 
 const skills = [
   {
@@ -68,12 +69,16 @@ const sns = [
   },
 ]
 
+export const metadata: Metadata = {
+  title: 'Profile',
+}
+
 export default function () {
   return (
     <div className={'grid min-h-[100svh] place-content-center'}>
       <div
         className={
-          'mx-auto w-full max-w-[400px] rounded border-8 bg-black px-5 py-8 [border-image-slice:1_!important] [border-image:linear-gradient(to_right,#1e9600,#fff200,#ff0000)_1_0%]'
+          'mx-auto w-full max-w-[400px] border-8 bg-black px-5 py-8 [border-image-slice:1_!important] [border-image:linear-gradient(to_right,#1e9600,#fff200,#ff0000)_1_0%] shadow-xl shadow-amber-50'
         }
       >
         <div className={'relative mx-auto aspect-square w-full max-w-[100px]'}>
