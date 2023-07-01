@@ -7,8 +7,8 @@ import {
 } from '@/src/component/dialog/dialog'
 import { CreateContactForm } from '@/src/feature/contact/create-contact-form/create-contact-form'
 import { EnvelopeIcon } from '@/src/icon/envelope'
-import { useCallback, useState } from 'react'
 import { cn } from '@/src/util/cn/cn'
+import { useCallback, useState } from 'react'
 
 export const CreateContactDialog = () => {
   const [isOpen, setIsOpen] = useState(false)

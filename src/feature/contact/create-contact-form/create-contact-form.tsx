@@ -21,7 +21,7 @@ type Props = Partial<{
 }>
 export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
   const [isPending, startTransition] = useTransition()
-  const { handleSubmit, register, reset, formState } = useForm({
+  const { formState, handleSubmit, register, reset } = useForm({
     schema,
   })
   const [errors, setErrors] = useState<CreateContactError | undefined>(
