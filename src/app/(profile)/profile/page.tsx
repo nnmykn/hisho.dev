@@ -1,4 +1,4 @@
-import image from '@/src/app/(profile)/profile/_images/profile.jpg'
+import image from '@/src/app/(profile)/profile/_image/profile.jpg'
 import { ExternalLink } from '@/src/component/link/external-link'
 import { Spacer } from '@/src/component/spacer/spacer'
 import { EnvelopeIcon } from '@/src/icon/envelope'
