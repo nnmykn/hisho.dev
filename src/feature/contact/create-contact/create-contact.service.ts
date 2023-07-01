@@ -26,6 +26,7 @@ export class CreateContactService {
         }),
         sendMail({
           fromEmail: env.FROM_EMAIL,
+
           message: joinWithNewLines(
             'お問い合わせありがとうございます',
             '',

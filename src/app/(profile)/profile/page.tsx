@@ -1,7 +1,7 @@
-import image from '@/src/app/(profile)/profile/_images/profile.jpg'
+import { CreateContactDialog } from '@/src/app/(profile)/profile/_component/create-contact-dialog'
+import image from '@/src/app/(profile)/profile/_image/profile.jpg'
 import { ExternalLink } from '@/src/component/link/external-link'
 import { Spacer } from '@/src/component/spacer/spacer'
-import { EnvelopeIcon } from '@/src/icon/envelope'
 import { GitHubIcon } from '@/src/icon/github'
 import { GraphQLIcon } from '@/src/icon/graphql'
 import { NestIcon } from '@/src/icon/nest'
@@ -145,15 +145,7 @@ export default function () {
               </li>
             ))}
             <li>
-              <button
-                className={
-                  'flex items-center gap-1 text-sm text-gray-300 transition-opacity hover:opacity-70 focus:opacity-70'
-                }
-                type={'button'}
-              >
-                <EnvelopeIcon className={'w-6 stroke-2'} />
-                <span>hisho.web@gmail.com</span>
-              </button>
+              <CreateContactDialog />
             </li>
           </ol>
         </section>
