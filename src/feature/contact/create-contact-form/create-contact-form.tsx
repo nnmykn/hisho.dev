@@ -14,7 +14,12 @@ const schema = z.object({
   message: z.string(),
   name: z.string(),
 })
-export const CreateContactForm = () => {
+
+type Props = Partial<{
+  onError: () => void
+  onSuccess: () => void
+}>
+export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
   const [isPending, startTransition] = useTransition()
   const { handleSubmit, register, reset } = useForm({
     schema,
@@ -27,14 +32,17 @@ export const CreateContactForm = () => {
     try {
       const result = await createContact(input)
       if (result.success) {
+        onSuccess?.()
         reset()
         setErrors(undefined)
       } else {
         console.log(result.error)
         setErrors(result.error)
+        onError?.()
       }
     } catch (e) {
       console.log(e)
+      onError?.()
     }
   }
 
