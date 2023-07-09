@@ -10,10 +10,8 @@ export const Input = forwardRef<
     <input
       className={'block w-full text-primary'}
       ref={ref}
-      type={'type'}
+      type={type ?? 'text'}
       {...props}
     />
   )
 })
-
-Input.displayName = 'Input'
