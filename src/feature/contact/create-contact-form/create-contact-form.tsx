@@ -1,4 +1,12 @@
 'use client'
+import {
+  FormControl,
+  FormErrorMessage,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormProvider,
+} from '@/src/component/from/form/form'
 import { Input } from '@/src/component/from/input/input'
 import { Textarea } from '@/src/component/from/textarea/textarea'
 import {
@@ -21,7 +29,7 @@ type Props = Partial<{
 }>
 export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
   const [isPending, startTransition] = useTransition()
-  const { formState, handleSubmit, register, reset } = useForm({
+  const form = useForm({
     schema,
   })
   const [errors, setErrors] = useState<CreateContactError | undefined>(
@@ -33,7 +41,7 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
       const result = await createContact(input)
       if (result.success) {
         onSuccess?.()
-        reset()
+        form.reset()
         setErrors(undefined)
       } else {
         console.log(result.error)
@@ -47,40 +55,67 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
   }
 
   return (
-    <form
-      onSubmit={(e) =>
-        startTransition(() => handleSubmit((i) => handleFormSubmit(i))(e))
-      }
-      className={'grid gap-y-2'}
-    >
-      <div>
-        <label htmlFor={'name'}>名前</label>
-        <Input {...register('name')} />
-        {formState.errors.name?.message && (
-          <span>{formState.errors.name.message}</span>
-        )}
-        {errors?.name &&
-          errors.name.map((m) => <span key={`name_${m}`}>{m}</span>)}
-      </div>
-      <div>
-        <label htmlFor={'email'}>メールアドレス</label>
-        <Input {...register('email')} type={'email'} />
-        {formState.errors.email?.message && (
-          <span>{formState.errors.email.message}</span>
-        )}
-        {errors?.email &&
-          errors.email.map((m) => <span key={`email_${m}`}>{m}</span>)}
-      </div>
-      <div>
-        <label htmlFor={'message'}>メッセージ</label>
-        <Textarea {...register('message')} />
-        {formState.errors.email?.message && (
-          <span>{formState.errors.email.message}</span>
-        )}
-        {errors?.message &&
-          errors.message.map((m) => <span key={`message_${m}`}>{m}</span>)}
-      </div>
-      <button>{isPending ? '送信中' : '送信'}</button>
-    </form>
+    <FormProvider {...form}>
+      <form
+        onSubmit={(e) =>
+          startTransition(() =>
+            form.handleSubmit((i) => handleFormSubmit(i))(e)
+          )
+        }
+        className={'grid gap-y-2'}
+      >
+        <FormField
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>名前</FormLabel>
+              <FormControl>
+                <Input {...field} />
+              </FormControl>
+              <FormErrorMessage>
+                {errors?.name &&
+                  errors.name.map((m) => <span key={`email_${m}`}>{m}</span>)}
+              </FormErrorMessage>
+            </FormItem>
+          )}
+          control={form.control}
+          name={'name'}
+        />
+        <FormField
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>メールアドレス</FormLabel>
+              <FormControl>
+                <Input {...field} type={'email'} />
+              </FormControl>
+              <FormErrorMessage>
+                {errors?.email &&
+                  errors.email.map((m) => <span key={`email_${m}`}>{m}</span>)}
+              </FormErrorMessage>
+            </FormItem>
+          )}
+          control={form.control}
+          name={'email'}
+        />
+        <FormField
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>メッセージ</FormLabel>
+              <FormControl>
+                <Textarea {...field} />
+              </FormControl>
+              <FormErrorMessage>
+                {errors?.message &&
+                  errors.message.map((m) => (
+                    <span key={`message_${m}`}>{m}</span>
+                  ))}
+              </FormErrorMessage>
+            </FormItem>
+          )}
+          control={form.control}
+          name={'message'}
+        />
+        <button>{isPending ? '送信中' : '送信'}</button>
+      </form>
+    </FormProvider>
   )
 }

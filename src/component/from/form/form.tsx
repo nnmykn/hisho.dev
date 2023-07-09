@@ -15,11 +15,11 @@ import {
   ControllerProps,
   FieldPath,
   FieldValues,
-  FormProvider,
+  FormProvider as FormProviderPrimitive,
   useFormContext,
 } from 'react-hook-form'
 
-const Form = FormProvider
+const FormProvider = FormProviderPrimitive
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -141,7 +141,7 @@ const FormDescription = forwardRef<
   )
 })
 
-const FormMessage = forwardRef<
+const FormErrorMessage = forwardRef<
   HTMLParagraphElement,
   HTMLAttributes<HTMLParagraphElement>
 >(({ children, className, ...props }, ref) => {
@@ -165,12 +165,12 @@ const FormMessage = forwardRef<
 })
 
 export {
-  Form,
   FormControl,
   FormDescription,
+  FormErrorMessage,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormProvider,
   useFormField,
 }
