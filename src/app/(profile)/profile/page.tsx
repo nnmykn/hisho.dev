@@ -98,25 +98,23 @@ export default function () {
           />
         </div>
         <Spacer size={2} />
-        <h1 className={'text-center text-4xl font-bold leading-none'}>
+        <h1 className={'text-center text-36 font-bold leading-1'}>
           Hisho Ohmasu
         </h1>
         <Spacer size={1} />
-        <p className={'text-center text-xl font-bold leading-none'}>
+        <p className={'text-center text-20 font-bold leading-1'}>
           Frontend Developer
         </p>
         <Spacer size={6} />
         <section>
-          <h2 className={'text-center text-xl leading-none'}>
-            Technical Skills
-          </h2>
+          <h2 className={'text-center text-20 leading-1'}>Technical Skills</h2>
           <Spacer size={3} />
           <ol className={'flex flex-wrap gap-1'}>
             {skills.map((skill, index) => (
               <li key={`skill_${skill.name}_${index}`}>
                 <div
                   className={
-                    'flex gap-1 rounded bg-accent px-2 py-1 text-sm text-gray-600'
+                    'flex gap-1 rounded bg-accent px-2 py-1 text-14 text-gray-600'
                   }
                 >
                   <div className={'w-5'}>{skill.icon}</div>
@@ -128,14 +126,14 @@ export default function () {
         </section>
         <Spacer size={6} />
         <section>
-          <h2 className={'text-center text-xl leading-none'}>contact</h2>
+          <h2 className={'text-center text-20 leading-1'}>contact</h2>
           <Spacer size={3} />
           <ol className={'flex flex-col items-center gap-1'}>
             {sns.map((sns, index) => (
               <li key={`sns_${sns.url}_${index}`}>
                 <ExternalLink
                   className={
-                    'flex items-center gap-1 text-sm text-gray-300 transition-opacity hover:opacity-70 focus:opacity-70'
+                    'flex items-center gap-1 text-14 text-gray-300 transition-opacity hover:opacity-70 focus:opacity-70'
                   }
                   href={sns.url}
                 >

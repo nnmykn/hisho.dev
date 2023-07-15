@@ -36,5 +36,6 @@ module.exports = {
         html: true,
       },
     ],
+    'tailwindcss/no-contradicting-classname': 'error',
   },
 }
