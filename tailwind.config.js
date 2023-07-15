@@ -8,10 +8,6 @@ module.exports = {
         contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
-      animation: {
-        contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
-        overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
-      },
       /**
        * Colors
        * @see https://colorhunt.co/palette/232931393e464ecca3eeeeee

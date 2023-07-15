@@ -15,8 +15,6 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'testing-library'],
   rules: {
-    'import/no-anonymous-default-export': 'off',
-    'react/display-name': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
