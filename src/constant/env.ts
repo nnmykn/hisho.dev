@@ -3,6 +3,7 @@ import { z } from 'zod'
 
 export const env = createEnv({
   client: {
+    NEXT_PUBLIC_EMAIL_ADDRESS: z.string().min(1).catch(''),
     NEXT_PUBLIC_LOCAL_ENV: z.enum(['development', 'production'] as const),
     NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'production'] as const),
     NEXT_PUBLIC_PORT: z.coerce.number().int().catch(3000),
@@ -11,6 +12,7 @@ export const env = createEnv({
   runtimeEnv: {
     FROM_EMAIL: process.env['FROM_EMAIL'],
     LOCAL_ENV: process.env['LOCAL_ENV'],
+    NEXT_PUBLIC_EMAIL_ADDRESS: process.env['NEXT_PUBLIC_EMAIL_ADDRESS'],
     NEXT_PUBLIC_LOCAL_ENV: process.env['NEXT_PUBLIC_LOCAL_ENV'],
     NEXT_PUBLIC_NODE_ENV: process.env['NODE_ENV'],
     NEXT_PUBLIC_PORT: process.env['NEXT_PUBLIC_PORT'],
