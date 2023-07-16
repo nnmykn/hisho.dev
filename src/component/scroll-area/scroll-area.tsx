@@ -23,7 +23,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
                   })
               : undefined
           }
-          className="h-full w-full rounded"
+          className={'h-full w-full rounded'}
           ref={viewportRef}
         >
           {children}
