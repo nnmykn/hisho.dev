@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from '@/src/component/dialog/dialog'
+import { env } from '@/src/constant/env'
 import { CreateContactForm } from '@/src/feature/contact/create-contact-form/create-contact-form'
 import { EnvelopeIcon } from '@/src/icon/envelope'
 import { cn } from '@/src/util/cn/cn'
@@ -25,7 +26,7 @@ export const CreateContactDialog = () => {
         }
       >
         <EnvelopeIcon className={'w-6 stroke-2'} />
-        <span>hisho.web@gmail.com</span>
+        <span>{env.FROM_EMAIL}</span>
       </DialogTrigger>
       <DialogContent className={'w-full max-w-144 px-4'}>
         <div
