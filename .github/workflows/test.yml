@@ -35,4 +35,5 @@ jobs:
           NEXT_PUBLIC_PORT: ${{ secrets.NEXT_PUBLIC_PORT }}
           NEXT_PUBLIC_LOCAL_ENV: ${{ secrets.NEXT_PUBLIC_LOCAL_ENV }}
           LOCAL_ENV: ${{ secrets.LOCAL_ENV }}
+          NEXT_PUBLIC_EMAIL_ADDRESS: ${{ secrets.NEXT_PUBLIC_EMAIL_ADDRESS }}
         run: pnpm test

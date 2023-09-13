@@ -9,16 +9,16 @@ export const Input = forwardRef<
     ComponentProps<'input'>,
     'name' | 'onBlur' | 'onChange' | 'type' | 'value'
   >
->(({ type, value, ...props }, ref) => {
+>(({ type = 'text', value = '', ...props }, ref) => {
   return (
     <input
       className={cn(
-        'block w-full text-primary',
-        'border-2 aria-[invalid="true"]:border-red'
+        'block w-full bg-transparent px-2 py-1 text-white backdrop-blur-md',
+        'border-2 border-gray-600 aria-[invalid="true"]:border-red'
       )}
       ref={ref}
-      type={type ?? 'text'}
-      value={value ?? ''}
+      type={type}
+      value={value}
       {...props}
     />
   )
