@@ -8,10 +8,10 @@ type Props = {
 export const ArticleCard = ({ article }: Props) => {
   return (
     <article className={'bg-secondary'}>
-      <div>
+      <div className={'relative aspect-[1200/630]'}>
         {article.image ? (
           <ExternalImage
-            className={'aspect-[1200/630]'}
+            className={'absolute inset-0'}
             height={630}
             src={article.image.url}
             width={1200}
@@ -19,10 +19,10 @@ export const ArticleCard = ({ article }: Props) => {
         ) : (
           <div
             className={
-              'grid aspect-[1200/630] place-content-center bg-secondary'
+              'absolute inset-0 grid place-content-center bg-secondary p-4'
             }
           >
-            no image
+            {article.title}
           </div>
         )}
       </div>
