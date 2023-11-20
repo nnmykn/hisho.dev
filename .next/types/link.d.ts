@@ -33,6 +33,8 @@ declare namespace __next_route_internal_types__ {
     | `/articles`
     | `/articles/api`
     | `/contact`
+    | `/events`
+    | `/events/api`
     | `/profile`
   type DynamicRoutes<T extends string = string> = never
 
@@ -46,20 +48,26 @@ declare namespace __next_route_internal_types__ {
 }
 
 declare module 'next' {
-  export { default } from 'next/types'
-  export * from 'next/types'
+  export { default } from 'next/types/index.js'
+  export * from 'next/types/index.js'
 
   export type Route<T extends string = string> =
     __next_route_internal_types__.RouteImpl<T>
 }
 
 declare module 'next/link' {
-  import type { LinkProps as OriginalLinkProps } from 'next/dist/client/link'
-  import type { AnchorHTMLAttributes } from 'react'
+  import type { LinkProps as OriginalLinkProps } from 'next/dist/client/link.js'
+  import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react'
   import type { UrlObject } from 'url'
   
   type LinkRestProps = Omit<
-    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof OriginalLinkProps> &
+    Omit<
+      DetailedHTMLProps<
+        AnchorHTMLAttributes<HTMLAnchorElement>,
+        HTMLAnchorElement
+      >,
+      keyof OriginalLinkProps
+    > &
       OriginalLinkProps,
     'href'
   >
@@ -76,9 +84,9 @@ declare module 'next/link' {
 }
 
 declare module 'next/navigation' {
-  export * from 'next/dist/client/components/navigation'
+  export * from 'next/dist/client/components/navigation.js'
 
-  import type { NavigateOptions, AppRouterInstance as OriginalAppRouterInstance } from 'next/dist/shared/lib/app-router-context'
+  import type { NavigateOptions, AppRouterInstance as OriginalAppRouterInstance } from 'next/dist/shared/lib/app-router-context.js'
   interface AppRouterInstance extends OriginalAppRouterInstance {
     /**
      * Navigate to the provided href.

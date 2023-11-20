@@ -19,6 +19,12 @@ export const Header = () => {
         <div className={'flex items-end gap-2'}>
           <InternalLink
             className={'hover:underline focus:underline'}
+            href={'/events'}
+          >
+            Events
+          </InternalLink>
+          <InternalLink
+            className={'hover:underline focus:underline'}
             href={'/articles'}
           >
             Articles
