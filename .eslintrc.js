@@ -4,10 +4,12 @@ module.exports = {
     'plugin:perfectionist/recommended-natural',
     'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:unicorn/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: [],
   rules: {
+    '@next/next/no-img-element': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
@@ -30,5 +32,28 @@ module.exports = {
       },
     ],
     'tailwindcss/no-contradicting-classname': 'error',
+    'unicorn/no-null': 'off',
+    'unicorn/no-useless-undefined': 'off',
+    'unicorn/prefer-module': 'off',
+    'unicorn/prefer-top-level-await': 'off',
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        replacements: {
+          e: {
+            event: false,
+          },
+          env: {
+            environment: false,
+          },
+          props: {
+            properties: false,
+          },
+          ref: {
+            reference: false,
+          },
+        },
+      },
+    ],
   },
 }
