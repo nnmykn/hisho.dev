@@ -22,9 +22,6 @@ const nextConfig = () => {
             exclude: ['error'],
           }
         : false,
-      reactRemoveProperties: __PROD__
-        ? { properties: ['^data-testid'] }
-        : false,
     },
   }
 }

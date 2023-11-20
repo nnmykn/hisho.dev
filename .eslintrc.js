@@ -5,15 +5,8 @@ module.exports = {
     'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
-  overrides: [
-    // Only uses Testing Library lint rules in test files
-    {
-      extends: ['plugin:testing-library/react'],
-      files: ['**/?(*.)+(component.spec).tsx'],
-    },
-  ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'testing-library'],
+  plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-unused-vars': [
       'warn',
