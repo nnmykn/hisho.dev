@@ -2,21 +2,27 @@ import { z } from 'zod'
 
 export const ZENN_URL = 'https://zenn.dev/hisho' as const
 
-export type Article = {
-  author: string
-  category: 'zenn'
-  content: string
-  createdAt: number
-  excerpt: string
-  id: string
-  image: {
-    type: string
-    url: string
-  } | null
-  publishedAt: number
-  title: string
-  url: string
-}
+export const articleSchema = z.object({
+  author: z.string(),
+  category: z.literal('zenn'),
+  content: z.string(),
+  createdAt: z.number(),
+  excerpt: z.string(),
+  id: z.string(),
+  image: z
+    .object({
+      type: z.string(),
+      url: z.string(),
+    })
+    .nullable(),
+  publishedAt: z.number(),
+  title: z.string(),
+  url: z.string(),
+})
+
+export const articlesSchema = z.array(articleSchema)
+
+export type Article = z.infer<typeof articleSchema>
 
 export const zennContentsSchema = z
   .object({

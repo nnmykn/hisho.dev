@@ -1,11 +1,13 @@
 import { ArticleCard } from '@/app/(basic)/articles/_feature/article/article-card'
-import { fetchArticles } from '@/app/(basic)/articles/api/route'
+import { articlesSchema } from '@/app/(basic)/articles/api/constant'
 import { ExternalLink } from '@/component/link/external-link'
-
-export const dynamic = 'force-dynamic'
-
 export default async function () {
-  const articles = await fetchArticles()
+  const articles = await articlesSchema.parseAsync(
+    await fetch('http://localhost:3000/articles/api').then((response) =>
+      response.json()
+    )
+  )
+
   return (
     <div>
       <ul
