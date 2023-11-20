@@ -9,7 +9,7 @@
     "build:next": "next build",
     "start": "next start",
     "lint": "run-p lint:*",
-    "lint:next": "next lint --dir . --ignore-path .prettierignore --max-warnings 0",
+    "lint:next": "next lint --dir src --ignore-path .prettierignore --max-warnings 0",
     "lint:typecheck": "tsc --pretty --noEmit",
     "lint:prettier": "prettier --check .",
     "format": "run-s format:*",
