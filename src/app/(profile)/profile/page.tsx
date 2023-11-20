@@ -82,17 +82,17 @@ export default function () {
         }
       >
         <div
+          aria-hidden
           className={
             'absolute -left-4 -top-4 -z-10 h-[calc(100%+32px)] w-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
           }
-          aria-hidden
         />
         <div className={'relative mx-auto aspect-square w-full max-w-[100px]'}>
           <Image
+            alt={''}
             className={
               'rounded-full border-4 border-write bg-accent object-cover object-center'
             }
-            alt={''}
             fill
             src={image}
           />

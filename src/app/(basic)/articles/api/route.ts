@@ -9,7 +9,7 @@ export const fetchArticles = async (): Promise<GetArticleResult> => {
   try {
     const rss = await parse(`${ZENN_URL}/feed`)
     return zennContentsSchema.parseAsync(rss)
-  } catch (e) {
-    throw e
+  } catch (error) {
+    throw error
   }
 }

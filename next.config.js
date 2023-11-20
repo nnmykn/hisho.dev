@@ -5,14 +5,6 @@ const nextConfig = () => {
   const __PROD__ = process.env.NODE_ENV === 'production'
 
   return {
-    poweredByHeader: false,
-    trailingSlash: true,
-    reactStrictMode: true,
-    experimental: {
-      appDir: true,
-      typedRoutes: true,
-      serverActions: true,
-    },
     /**
      * @see https://nextjs.org/docs/architecture/nextjs-compiler#remove-react-properties
      */
@@ -23,6 +15,14 @@ const nextConfig = () => {
           }
         : false,
     },
+    experimental: {
+      appDir: true,
+      serverActions: true,
+      typedRoutes: true,
+    },
+    poweredByHeader: false,
+    reactStrictMode: true,
+    trailingSlash: true,
   }
 }
 

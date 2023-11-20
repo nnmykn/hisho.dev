@@ -46,7 +46,7 @@ const json = [
 export const fetchEvents = async (): Promise<z.infer<typeof schema>> => {
   try {
     return schema.parse(json)
-  } catch (e) {
-    throw e
+  } catch (error) {
+    throw error
   }
 }

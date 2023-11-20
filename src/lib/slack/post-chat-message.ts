@@ -1,11 +1,11 @@
 import { createSlackClient } from '@/src/lib/slack/create-slack-client'
 
-type Params = {
+type Parameters_ = {
   channelId: string
   message: string
 }
 
-export const postChatMessage = ({ channelId, message }: Params) => {
+export const postChatMessage = ({ channelId, message }: Parameters_) => {
   const client = createSlackClient()
   return client.chat.postMessage({
     channel: channelId,

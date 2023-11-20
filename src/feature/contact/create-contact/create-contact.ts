@@ -30,13 +30,11 @@ export const createContact = async (
   createContactInput: CreateContactInput
 ): Promise<CreateContactResult> => {
   const parsedInput = createContactInputSchema.safeParse(createContactInput)
-  if (parsedInput.success) {
-    return await CreateContactService.create(parsedInput.data)
-  } else {
-    return {
-      error: parsedInput.error.flatten().fieldErrors,
-      message: undefined,
-      success: false,
-    }
-  }
+  return parsedInput.success
+    ? await CreateContactService.create(parsedInput.data)
+    : {
+        error: parsedInput.error.flatten().fieldErrors,
+        message: undefined,
+        success: false,
+      }
 }

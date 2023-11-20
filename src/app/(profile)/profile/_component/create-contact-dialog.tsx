@@ -36,11 +36,11 @@ export const CreateContactDialog = () => {
           )}
         >
           <div
+            aria-hidden
             className={cn(
               'absolute -left-4 -top-4 -z-10',
               'h-[calc(100%+32px)] w-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
             )}
-            aria-hidden
           />
 
           <CreateContactForm onSuccess={onClose} />

@@ -48,8 +48,8 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
         setErrors(result.error)
         onError?.()
       }
-    } catch (e) {
-      console.log(e)
+    } catch (error) {
+      console.log(error)
       onError?.()
     }
   }
@@ -57,14 +57,16 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
   return (
     <FormProvider {...form}>
       <form
-        onSubmit={(e) =>
+        className={'grid gap-y-2'}
+        onSubmit={(error) =>
           startTransition(() =>
-            form.handleSubmit((i) => handleFormSubmit(i))(e)
+            form.handleSubmit((index) => handleFormSubmit(index))(error)
           )
         }
-        className={'grid gap-y-2'}
       >
         <FormField
+          control={form.control}
+          name={'name'}
           render={({ field }) => (
             <FormItem>
               <FormLabel>名前</FormLabel>
@@ -77,10 +79,10 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
               </FormErrorMessage>
             </FormItem>
           )}
-          control={form.control}
-          name={'name'}
         />
         <FormField
+          control={form.control}
+          name={'email'}
           render={({ field }) => (
             <FormItem>
               <FormLabel>メールアドレス</FormLabel>
@@ -93,10 +95,10 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
               </FormErrorMessage>
             </FormItem>
           )}
-          control={form.control}
-          name={'email'}
         />
         <FormField
+          control={form.control}
+          name={'message'}
           render={({ field }) => (
             <FormItem>
               <FormLabel>メッセージ</FormLabel>
@@ -111,8 +113,6 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
               </FormErrorMessage>
             </FormItem>
           )}
-          control={form.control}
-          name={'message'}
         />
         <button>{isPending ? '送信中' : '送信'}</button>
       </form>
