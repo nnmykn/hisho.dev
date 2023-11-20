@@ -1,4 +1,4 @@
-import { Header } from '@/src/app/(profile)/_component/header/header'
+import { Header } from '@/app/(profile)/_component/header/header'
 import { ReactElement } from 'react'
 
 type Props = {

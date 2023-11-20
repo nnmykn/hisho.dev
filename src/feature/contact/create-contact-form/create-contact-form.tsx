@@ -6,14 +6,14 @@ import {
   FormItem,
   FormLabel,
   FormProvider,
-} from '@/src/component/from/form/form'
-import { Input } from '@/src/component/from/input/input'
-import { Textarea } from '@/src/component/from/textarea/textarea'
+} from '@/component/from/form/form'
+import { Input } from '@/component/from/input/input'
+import { Textarea } from '@/component/from/textarea/textarea'
 import {
   CreateContactError,
   createContact,
-} from '@/src/feature/contact/create-contact/create-contact'
-import { useForm } from '@/src/lib/form/use-form/use-form'
+} from '@/feature/contact/create-contact/create-contact'
+import { useForm } from '@/lib/form/use-form/use-form'
 import { useState, useTransition } from 'react'
 import { z } from 'zod'
 

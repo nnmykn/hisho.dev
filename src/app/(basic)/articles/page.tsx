@@ -1,6 +1,6 @@
-import { ArticleCard } from '@/src/app/(basic)/articles/_feature/article/article-card'
-import { fetchArticles } from '@/src/app/(basic)/articles/api/route'
-import { ExternalLink } from '@/src/component/link/external-link'
+import { ArticleCard } from '@/app/(basic)/articles/_feature/article/article-card'
+import { fetchArticles } from '@/app/(basic)/articles/api/route'
+import { ExternalLink } from '@/component/link/external-link'
 
 export const dynamic = 'force-dynamic'
 

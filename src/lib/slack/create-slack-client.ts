@@ -1,4 +1,4 @@
-import { env } from '@/src/constant/env'
+import { env } from '@/constant/env'
 import { WebClient } from '@slack/web-api'
 
 export const createSlackClient = () => {

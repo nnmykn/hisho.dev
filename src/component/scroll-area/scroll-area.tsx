@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/src/util/cn/cn'
+import { cn } from '@/util/cn/cn'
 import * as _ScrollArea from '@radix-ui/react-scroll-area'
 import { ComponentProps, forwardRef } from 'react'
 

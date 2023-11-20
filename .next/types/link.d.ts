@@ -30,9 +30,11 @@ declare namespace __next_route_internal_types__ {
 
   type StaticRoutes = 
     | `/`
-    | `/contact`
     | `/articles`
+    | `/articles/api`
+    | `/contact`
     | `/events`
+    | `/events/api`
     | `/profile`
   type DynamicRoutes<T extends string = string> = never
 
@@ -57,7 +59,7 @@ declare module 'next/link' {
   import type { LinkProps as OriginalLinkProps } from 'next/dist/client/link.js'
   import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react'
   import type { UrlObject } from 'url'
-  
+
   type LinkRestProps = Omit<
     Omit<
       DetailedHTMLProps<
@@ -70,12 +72,12 @@ declare module 'next/link' {
     'href'
   >
 
-  export type LinkProps<T> = LinkRestProps & {
+  export type LinkProps<RouteInferType> = LinkRestProps & {
     /**
      * The path or URL to navigate to. This is the only required prop. It can also be an object.
      * @see https://nextjs.org/docs/api-reference/next/link
      */
-    href: __next_route_internal_types__.RouteImpl<T> | UrlObject
+    href: __next_route_internal_types__.RouteImpl<RouteInferType> | UrlObject
   }
 
   export default function Link<RouteType>(props: LinkProps<RouteType>): JSX.Element
@@ -84,7 +86,7 @@ declare module 'next/link' {
 declare module 'next/navigation' {
   export * from 'next/dist/client/components/navigation.js'
 
-  import type { NavigateOptions, AppRouterInstance as OriginalAppRouterInstance } from 'next/dist/shared/lib/app-router-context.js'
+  import type { NavigateOptions, AppRouterInstance as OriginalAppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime.js'
   interface AppRouterInstance extends OriginalAppRouterInstance {
     /**
      * Navigate to the provided href.

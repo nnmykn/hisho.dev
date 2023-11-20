@@ -18,7 +18,7 @@
     "incremental": false,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {

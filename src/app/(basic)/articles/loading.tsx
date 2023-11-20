@@ -1,4 +1,4 @@
-import { ArticleCardSkeleton } from '@/src/app/(basic)/articles/_feature/article/article-card'
+import { ArticleCardSkeleton } from '@/app/(basic)/articles/_feature/article/article-card'
 import { range } from 'lodash'
 
 export default function () {

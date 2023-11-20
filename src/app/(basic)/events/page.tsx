@@ -1,4 +1,4 @@
-import { fetchEvents } from '@/src/app/(basic)/events/api/route'
+import { fetchEvents } from '@/app/(basic)/events/api/route'
 
 export const dynamic = 'force-dynamic'
 export default async function () {

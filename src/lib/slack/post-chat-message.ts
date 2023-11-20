@@ -1,4 +1,4 @@
-import { createSlackClient } from '@/src/lib/slack/create-slack-client'
+import { createSlackClient } from '@/lib/slack/create-slack-client'
 
 type Parameters_ = {
   channelId: string

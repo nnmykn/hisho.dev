@@ -2,7 +2,7 @@ import {
   GetArticleResult,
   ZENN_URL,
   zennContentsSchema,
-} from '@/src/app/(basic)/articles/api/constant'
+} from '@/app/(basic)/articles/api/constant'
 import { parse } from 'rss-to-json'
 
 export const fetchArticles = async (): Promise<GetArticleResult> => {

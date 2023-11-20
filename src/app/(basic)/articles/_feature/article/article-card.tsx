@@ -1,5 +1,5 @@
-import { Article } from '@/src/app/(basic)/articles/api/constant'
-import { ExternalImage } from '@/src/component/Image/external-image'
+import { Article } from '@/app/(basic)/articles/api/constant'
+import { ExternalImage } from '@/component/Image/external-image'
 
 type Props = {
   article: Pick<Article, 'category' | 'image' | 'publishedAt' | 'title' | 'url'>
