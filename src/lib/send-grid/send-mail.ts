@@ -1,13 +1,18 @@
-import { createSendGridClient } from '@/src/lib/send-grid/create-send-grid-client'
+import { createSendGridClient } from '@/lib/send-grid/create-send-grid-client'
 
-type Params = {
+type Parameters_ = {
   fromEmail: string
   message: string
   subject: string
   toEmail: string
 }
 
-export const sendMail = ({ fromEmail, message, subject, toEmail }: Params) => {
+export const sendMail = ({
+  fromEmail,
+  message,
+  subject,
+  toEmail,
+}: Parameters_) => {
   const client = createSendGridClient()
 
   return client.send({

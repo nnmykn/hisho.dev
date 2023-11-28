@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
-import '@/src/app/app.css'
-import { FRONTEND_URL } from '@/src/constant/constant'
+import '@/app/app.css'
+import { FRONTEND_URL } from '@/constant/constant'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

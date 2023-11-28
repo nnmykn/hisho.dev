@@ -1,4 +1,4 @@
-import { env } from '@/src/constant/env'
+import { env } from '@/constant/env'
 import client from '@sendgrid/mail'
 
 export const createSendGridClient = () => {

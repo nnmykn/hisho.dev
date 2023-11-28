@@ -1,4 +1,4 @@
-import { InternalLink } from '@/src/component/link/internal-link'
+import { InternalLink } from '@/component/link/internal-link'
 
 export const Header = () => {
   return (

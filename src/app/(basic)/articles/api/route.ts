@@ -1,15 +1,17 @@
 import {
-  GetArticleResult,
   ZENN_URL,
   zennContentsSchema,
-} from '@/src/app/(basic)/articles/api/constant'
+} from '@/app/(basic)/articles/api/constant'
+import { NextResponse } from 'next/server'
 import { parse } from 'rss-to-json'
 
-export const fetchArticles = async (): Promise<GetArticleResult> => {
+export async function GET() {
   try {
-    const rss = await parse(`${ZENN_URL}/feed`)
-    return zennContentsSchema.parseAsync(rss)
-  } catch (e) {
-    throw e
+    const rss = await zennContentsSchema.parseAsync(
+      await parse(`${ZENN_URL}/feed`)
+    )
+    return NextResponse.json(rss)
+  } catch {
+    return NextResponse.error()
   }
 }

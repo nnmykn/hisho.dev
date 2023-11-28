@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/src/util/cn/cn'
+import { cn } from '@/util/cn/cn'
 import { ComponentProps, forwardRef } from 'react'
 
 export const Textarea = forwardRef<

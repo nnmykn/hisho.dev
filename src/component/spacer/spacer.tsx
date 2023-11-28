@@ -19,12 +19,12 @@ const resolveValue = (value: List | undefined) => {
 export const Spacer = memo(({ isHorizontal = false, size }: Props) => {
   return (
     <span
+      aria-hidden
+      className={`block ${isHorizontal ? 'flex-1' : ''}`}
       style={{
         height: isHorizontal ? undefined : resolveValue(size),
         width: isHorizontal ? resolveValue(size) : undefined,
       }}
-      aria-hidden
-      className={`block ${isHorizontal ? 'flex-1' : ''}`}
     />
   )
 })

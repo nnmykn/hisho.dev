@@ -1,4 +1,4 @@
-import { cn } from '@/src/util/cn/cn'
+import { cn } from '@/util/cn/cn'
 import { ComponentProps } from 'react'
 
 type Props = Pick<ComponentProps<'span'>, 'className'>

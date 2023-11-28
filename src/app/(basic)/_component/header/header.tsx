@@ -1,6 +1,6 @@
-import { InternalLink } from '@/src/component/link/internal-link'
-import { Spacer } from '@/src/component/spacer/spacer'
-import { LogoIcon } from '@/src/icon/logo'
+import { InternalLink } from '@/component/link/internal-link'
+import { Spacer } from '@/component/spacer/spacer'
+import { LogoIcon } from '@/icon/logo'
 
 export const Header = () => {
   return (
@@ -17,6 +17,12 @@ export const Header = () => {
         </InternalLink>
         <Spacer isHorizontal />
         <div className={'flex items-end gap-2'}>
+          <InternalLink
+            className={'hover:underline focus:underline'}
+            href={'/events'}
+          >
+            Events
+          </InternalLink>
           <InternalLink
             className={'hover:underline focus:underline'}
             href={'/articles'}

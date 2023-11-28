@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/src/util/cn/cn'
+import { cn } from '@/util/cn/cn'
 import * as _ScrollArea from '@radix-ui/react-scroll-area'
 import { ComponentProps, forwardRef } from 'react'
 
@@ -14,6 +14,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
     return (
       <_ScrollArea.Root className={cn('overflow-hidden', className)} ref={ref}>
         <_ScrollArea.Viewport
+          className={'h-full w-full rounded'}
           onScroll={
             typeof onScrollPositionChange === 'function'
               ? ({ currentTarget }) =>
@@ -23,7 +24,6 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
                   })
               : undefined
           }
-          className={'h-full w-full rounded'}
           ref={viewportRef}
         >
           {children}

@@ -1,14 +1,10 @@
 'use client'
 
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from '@/src/component/dialog/dialog'
-import { env } from '@/src/constant/env'
-import { CreateContactForm } from '@/src/feature/contact/create-contact-form/create-contact-form'
-import { EnvelopeIcon } from '@/src/icon/envelope'
-import { cn } from '@/src/util/cn/cn'
+import { Dialog, DialogContent, DialogTrigger } from '@/component/dialog/dialog'
+import { env } from '@/constant/env'
+import { CreateContactForm } from '@/feature/contact/create-contact-form/create-contact-form'
+import { EnvelopeIcon } from '@/icon/envelope'
+import { cn } from '@/util/cn/cn'
 import { useCallback, useState } from 'react'
 
 export const CreateContactDialog = () => {
@@ -36,11 +32,11 @@ export const CreateContactDialog = () => {
           )}
         >
           <div
+            aria-hidden
             className={cn(
               'absolute -left-4 -top-4 -z-10',
               'h-[calc(100%+32px)] w-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
             )}
-            aria-hidden
           />
 
           <CreateContactForm onSuccess={onClose} />

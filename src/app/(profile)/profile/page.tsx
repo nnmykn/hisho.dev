@@ -1,18 +1,18 @@
-import { CreateContactDialog } from '@/src/app/(profile)/profile/_component/create-contact-dialog'
-import image from '@/src/app/(profile)/profile/_image/profile.jpg'
-import { ExternalLink } from '@/src/component/link/external-link'
-import { Spacer } from '@/src/component/spacer/spacer'
-import { GitHubIcon } from '@/src/icon/github'
-import { GraphQLIcon } from '@/src/icon/graphql'
-import { NestIcon } from '@/src/icon/nest'
-import { NextIcon } from '@/src/icon/next'
-import { NodeIcon } from '@/src/icon/node'
-import { PlaywrightIcon } from '@/src/icon/playwright'
-import { ReactIcon } from '@/src/icon/react'
-import { TailwindcssIcon } from '@/src/icon/tailwindcss'
-import { TwitterIcon } from '@/src/icon/twitter'
-import { TypeScriptIcon } from '@/src/icon/typescript'
-import { ZennIcon } from '@/src/icon/zenn'
+import { CreateContactDialog } from '@/app/(profile)/profile/_component/create-contact-dialog'
+import image from '@/app/(profile)/profile/_image/profile.jpg'
+import { ExternalLink } from '@/component/link/external-link'
+import { Spacer } from '@/component/spacer/spacer'
+import { GitHubIcon } from '@/icon/github'
+import { GraphQLIcon } from '@/icon/graphql'
+import { NestIcon } from '@/icon/nest'
+import { NextIcon } from '@/icon/next'
+import { NodeIcon } from '@/icon/node'
+import { PlaywrightIcon } from '@/icon/playwright'
+import { ReactIcon } from '@/icon/react'
+import { TailwindcssIcon } from '@/icon/tailwindcss'
+import { TwitterIcon } from '@/icon/twitter'
+import { TypeScriptIcon } from '@/icon/typescript'
+import { ZennIcon } from '@/icon/zenn'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -82,17 +82,17 @@ export default function () {
         }
       >
         <div
+          aria-hidden
           className={
             'absolute -left-4 -top-4 -z-10 h-[calc(100%+32px)] w-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
           }
-          aria-hidden
         />
         <div className={'relative mx-auto aspect-square w-full max-w-[100px]'}>
           <Image
+            alt={''}
             className={
               'rounded-full border-4 border-write bg-accent object-cover object-center'
             }
-            alt={''}
             fill
             src={image}
           />
