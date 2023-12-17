@@ -1,8 +1,9 @@
 import { eventsSchema } from '@/app/(basic)/events/api/constant'
+import { FRONTEND_URL } from '@/constant/constant'
 
 export default async function () {
   const events = await eventsSchema.parseAsync(
-    await fetch('http://localhost:3000/events/api').then((response) =>
+    await fetch(`${FRONTEND_URL}/events/api`).then((response) =>
       response.json()
     )
   )
