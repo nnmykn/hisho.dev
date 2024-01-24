@@ -14,7 +14,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
     return (
       <_ScrollArea.Root className={cn('overflow-hidden', className)} ref={ref}>
         <_ScrollArea.Viewport
-          className={'h-full w-full rounded'}
+          className={'size-full rounded'}
           onScroll={
             typeof onScrollPositionChange === 'function'
               ? ({ currentTarget }) =>
@@ -36,7 +36,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
         >
           <_ScrollArea.Thumb
             className={
-              "relative flex-1 cursor-pointer rounded-[10px] bg-red before:absolute before:left-1/2 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']"
+              "relative flex-1 cursor-pointer rounded-[10px] bg-red before:absolute before:left-1/2 before:top-1/2 before:size-full before:min-h-[44px] before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']"
             }
           />
         </_ScrollArea.Scrollbar>
@@ -48,7 +48,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, Props>(
         >
           <_ScrollArea.Thumb
             className={
-              "relative flex-1 rounded-[10px] bg-red before:absolute before:left-1/2 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']"
+              "relative flex-1 rounded-[10px] bg-red before:absolute before:left-1/2 before:top-1/2 before:size-full before:min-h-[44px] before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']"
             }
           />
         </_ScrollArea.Scrollbar>

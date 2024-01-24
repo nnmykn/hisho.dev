@@ -84,7 +84,7 @@ export default function () {
         <div
           aria-hidden
           className={
-            'absolute -left-4 -top-4 -z-10 h-[calc(100%+32px)] w-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
+            'absolute -left-4 -top-4 -z-10 size-[calc(100%+32px)] bg-[linear-gradient(to_right,#1e9600,#fff200,#ff0000)] blur-md'
           }
         />
         <div className={'relative mx-auto aspect-square w-full max-w-[100px]'}>
