@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   FormControl,
   FormErrorMessage,
@@ -6,58 +6,58 @@ import {
   FormItem,
   FormLabel,
   FormProvider,
-} from '@/component/from/form/form'
-import { Input } from '@/component/from/input/input'
-import { Textarea } from '@/component/from/textarea/textarea'
+} from "@/component/from/form/form";
+import { Input } from "@/component/from/input/input";
+import { Textarea } from "@/component/from/textarea/textarea";
 import {
   CreateContactError,
   createContact,
-} from '@/feature/contact/create-contact/create-contact'
-import { useForm } from '@/lib/form/use-form/use-form'
-import { useState, useTransition } from 'react'
-import { z } from 'zod'
+} from "@/feature/contact/create-contact/create-contact";
+import { useForm } from "@/lib/form/use-form/use-form";
+import { useState, useTransition } from "react";
+import { z } from "zod";
 
 const schema = z.object({
   email: z.string(),
   message: z.string(),
   name: z.string(),
-})
+});
 
 type Props = Partial<{
-  onError: () => void
-  onSuccess: () => void
-}>
+  onError: () => void;
+  onSuccess: () => void;
+}>;
 export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
-  const [isPending, startTransition] = useTransition()
+  const [isPending, startTransition] = useTransition();
   const form = useForm({
     schema,
-  })
+  });
   const [errors, setErrors] = useState<CreateContactError | undefined>(
     undefined
-  )
+  );
 
   const handleFormSubmit = async (input: z.output<typeof schema>) => {
     try {
-      const result = await createContact(input)
+      const result = await createContact(input);
       if (result.success) {
-        onSuccess?.()
-        form.reset()
-        setErrors(undefined)
+        onSuccess?.();
+        form.reset();
+        setErrors(undefined);
       } else {
-        console.log(result.error)
-        setErrors(result.error)
-        onError?.()
+        console.log(result.error);
+        setErrors(result.error);
+        onError?.();
       }
     } catch (error) {
-      console.log(error)
-      onError?.()
+      console.log(error);
+      onError?.();
     }
-  }
+  };
 
   return (
     <FormProvider {...form}>
       <form
-        className={'grid gap-y-2'}
+        className={"grid gap-y-2"}
         onSubmit={(error) =>
           startTransition(() =>
             form.handleSubmit((index) => handleFormSubmit(index))(error)
@@ -66,7 +66,7 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
       >
         <FormField
           control={form.control}
-          name={'name'}
+          name={"name"}
           render={({ field }) => (
             <FormItem>
               <FormLabel>名前</FormLabel>
@@ -82,12 +82,12 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
         />
         <FormField
           control={form.control}
-          name={'email'}
+          name={"email"}
           render={({ field }) => (
             <FormItem>
               <FormLabel>メールアドレス</FormLabel>
               <FormControl>
-                <Input {...field} type={'email'} />
+                <Input {...field} type={"email"} />
               </FormControl>
               <FormErrorMessage>
                 {errors?.email &&
@@ -98,7 +98,7 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
         />
         <FormField
           control={form.control}
-          name={'message'}
+          name={"message"}
           render={({ field }) => (
             <FormItem>
               <FormLabel>メッセージ</FormLabel>
@@ -114,8 +114,8 @@ export const CreateContactForm = ({ onError, onSuccess }: Props = {}) => {
             </FormItem>
           )}
         />
-        <button>{isPending ? '送信中' : '送信'}</button>
+        <button disabled={isPending}>{isPending ? "送信中" : "送信"}</button>
       </form>
     </FormProvider>
-  )
-}
+  );
+};
